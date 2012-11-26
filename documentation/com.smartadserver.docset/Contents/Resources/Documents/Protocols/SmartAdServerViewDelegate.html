@@ -1,0 +1,1183 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>SmartAdServerViewDelegate Protocol Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.4 (build 703)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Smart AdServer iOS SDK </a></h1>
+				<a id="developerHome" href="../index.html"></a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">SmartAdServerViewDelegate Protocol Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/didDownloadSmartAdServerView:">&nbsp;&nbsp;&nbsp;&nbsp;- didDownloadSmartAdServerView:</option>
+	
+	<option value="//api/name/didFailDownloadingSmartAdServerView:">&nbsp;&nbsp;&nbsp;&nbsp;- didFailDownloadingSmartAdServerView:</option>
+	
+	<option value="//api/name/expandSASViewDidUnexpand:">&nbsp;&nbsp;&nbsp;&nbsp;- expandSASViewDidUnexpand:</option>
+	
+	<option value="//api/name/intersticielSASViewDidDisappear:">&nbsp;&nbsp;&nbsp;&nbsp;- intersticielSASViewDidDisappear:</option>
+	
+	<option value="//api/name/sasView:didDownloadAdInfo:">&nbsp;&nbsp;&nbsp;&nbsp;- sasView:didDownloadAdInfo:</option>
+	
+	<option value="//api/name/sasView:shouldHandleUrl:">&nbsp;&nbsp;&nbsp;&nbsp;- sasView:shouldHandleUrl:</option>
+	
+	<option value="//api/name/sasViewDidCollapse:">&nbsp;&nbsp;&nbsp;&nbsp;- sasViewDidCollapse:</option>
+	
+	<option value="//api/name/sasViewDidDisappear:">&nbsp;&nbsp;&nbsp;&nbsp;- sasViewDidDisappear:</option>
+	
+	<option value="//api/name/sasViewDidFailToLoadAd:">&nbsp;&nbsp;&nbsp;&nbsp;- sasViewDidFailToLoadAd:</option>
+	
+	<option value="//api/name/sasViewDidLoadAd:">&nbsp;&nbsp;&nbsp;&nbsp;- sasViewDidLoadAd:</option>
+	
+	<option value="//api/name/sasViewDidPerformAdAction:willExitApplication:">&nbsp;&nbsp;&nbsp;&nbsp;- sasViewDidPerformAdAction:willExitApplication:</option>
+	
+	<option value="//api/name/sasViewWillDismissModalView:">&nbsp;&nbsp;&nbsp;&nbsp;- sasViewWillDismissModalView:</option>
+	
+	<option value="//api/name/sasViewWillPresentModalView:">&nbsp;&nbsp;&nbsp;&nbsp;- sasViewWillPresentModalView:</option>
+	
+	<option value="//api/name/viewControllerForSmartAdServerView:">&nbsp;&nbsp;&nbsp;&nbsp;- viewControllerForSmartAdServerView:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Methods">Methods</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Deprecated Methods">Deprecated Methods</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didDownloadSmartAdServerView:">didDownloadSmartAdServerView:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didFailDownloadingSmartAdServerView:">didFailDownloadingSmartAdServerView:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/expandSASViewDidUnexpand:">expandSASViewDidUnexpand:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/intersticielSASViewDidDisappear:">intersticielSASViewDidDisappear:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sasView:didDownloadAdInfo:">sasView:didDownloadAdInfo:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sasView:shouldHandleUrl:">sasView:shouldHandleUrl:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sasViewDidCollapse:">sasViewDidCollapse:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sasViewDidDisappear:">sasViewDidDisappear:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sasViewDidFailToLoadAd:">sasViewDidFailToLoadAd:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sasViewDidLoadAd:">sasViewDidLoadAd:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sasViewDidPerformAdAction:willExitApplication:">sasViewDidPerformAdAction:willExitApplication:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sasViewWillDismissModalView:">sasViewWillDismissModalView:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sasViewWillPresentModalView:">sasViewWillPresentModalView:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/viewControllerForSmartAdServerView:">viewControllerForSmartAdServerView:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="SmartAdServerViewDelegate Protocol Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">SmartAdServerViewDelegate Protocol Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">SmartAdServerViewDelegate.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The delegate of a <a href="../Classes/SmartAdServerView.html">SmartAdServerView</a> object must adopt the <a href="SmartAdServerViewDelegate.html">SmartAdServerViewDelegate</a> protocol.</p>
+
+<p>Many methods of <a href="SmartAdServerViewDelegate.html">SmartAdServerViewDelegate</a> return the ad view sent by the message.
+The protocol methods allow the delegate to be aware of the ad-related events.
+You can use it to handle your app&rsquo;s or the ad&rsquo;s behavior like adapting your viewController&rsquo;s view size depending on the ad being displayed or not.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Methods" name="task_Methods"></a>
+						<h3 class="subsubtitle task-title">Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sasView:didDownloadAdInfo:">&ndash;&nbsp;sasView:didDownloadAdInfo:</a></code>
+		<span class="tooltip"><p>Tells the delegate that the ad data has been fetched, and will try to display it</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sasViewDidLoadAd:">&ndash;&nbsp;sasViewDidLoadAd:</a></code>
+		<span class="tooltip"><p>Tells the delegate that the creative from the current ad has been loaded and displayed</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sasViewDidFailToLoadAd:">&ndash;&nbsp;sasViewDidFailToLoadAd:</a></code>
+		<span class="tooltip"><p>Tells the delegate that the <a href="../Classes/SmartAdServerView.html">SmartAdServerView</a> failed to download the ad</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sasViewDidCollapse:">&ndash;&nbsp;sasViewDidCollapse:</a></code>
+		<span class="tooltip"><p>Tells the delegate that the <a href="../Classes/SmartAdServerView.html">SmartAdServerView</a> which displayed an expandable ad did collapse</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sasViewDidDisappear:">&ndash;&nbsp;sasViewDidDisappear:</a></code>
+		<span class="tooltip"><p>Tells the delegate that the <a href="../Classes/SmartAdServerView.html">SmartAdServerView</a> has been dismissed</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sasViewWillPresentModalView:">&ndash;&nbsp;sasViewWillPresentModalView:</a></code>
+		<span class="tooltip"><p>Tells the delegate that a modal view will appear to display the ad&rsquo;s redirect URL web page if appropriate</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sasViewWillDismissModalView:">&ndash;&nbsp;sasViewWillDismissModalView:</a></code>
+		<span class="tooltip"><p>Tells the delegate that the modal view will be dismissed</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/viewControllerForSmartAdServerView:">&ndash;&nbsp;viewControllerForSmartAdServerView:</a></code>
+		<span class="tooltip"><p>Asks the delegate for a View Controller to manage the modal view that displays the redirect URL</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sasViewDidPerformAdAction:willExitApplication:">&ndash;&nbsp;sasViewDidPerformAdAction:willExitApplication:</a></code>
+		<span class="tooltip"><p>Tells the delegate that an ad action has been made (for example, the user tapped the ad)</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sasView:shouldHandleUrl:">&ndash;&nbsp;sasView:shouldHandleUrl:</a></code>
+		<span class="tooltip"><p>Asks the delegate whether to execute ad action</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Deprecated Methods" name="task_Deprecated Methods"></a>
+						<h3 class="subsubtitle task-title">Deprecated Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/didFailDownloadingSmartAdServerView:">&ndash;&nbsp;didFailDownloadingSmartAdServerView:</a></code>
+		<span class="tooltip"><p><strong>Deprecated</strong> Tells the delegate that the ad or the portrait creative or the landscape creative failed to download and asks for another ad to display</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/didDownloadSmartAdServerView:">&ndash;&nbsp;didDownloadSmartAdServerView:</a></code>
+		<span class="tooltip"><p><strong>Deprecated</strong> Tells the delegate that the ad or the portrait creative or the landscape creative did download</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/expandSASViewDidUnexpand:">&ndash;&nbsp;expandSASViewDidUnexpand:</a></code>
+		<span class="tooltip"><p><strong>Deprecated</strong> Tells the delegate that the ad view did collapse</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/intersticielSASViewDidDisappear:">&ndash;&nbsp;intersticielSASViewDidDisappear:</a></code>
+		<span class="tooltip"><p><strong>Deprecated</strong> Tells the delegate that the ad disappeared</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/didDownloadSmartAdServerView:" title="didDownloadSmartAdServerView:"></a>
+	<h3 class="subsubtitle method-title">didDownloadSmartAdServerView:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p><strong>Deprecated</strong> Tells the delegate that the ad or the portrait creative or the landscape creative did download</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)didDownloadSmartAdServerView:(SmartAdServerView *)<em>smartAdServerView</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>smartAdServerView</em></dt>
+			<dd><p>An ad view object telling the delegate that something was downloaded</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><strong>Deprecated</strong> Tells the delegate that the ad or the portrait creative or the landscape creative did download</p><div class="bug"><p><strong>This method has been deprecated</strong>, please use <a href="#//api/name/sasView:didDownloadAdInfo:">sasView:didDownloadAdInfo:</a> and/or <a href="#//api/name/sasViewDidLoadAd:">sasViewDidLoadAd:</a></p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SmartAdServerViewDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/didFailDownloadingSmartAdServerView:" title="didFailDownloadingSmartAdServerView:"></a>
+	<h3 class="subsubtitle method-title">didFailDownloadingSmartAdServerView:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p><strong>Deprecated</strong> Tells the delegate that the ad or the portrait creative or the landscape creative failed to download and asks for another ad to display</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (SmartAdServerAd *)didFailDownloadingSmartAdServerView:(SmartAdServerView *)<em>smartAdServerView</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>smartAdServerView</em></dt>
+			<dd><p>An ad view object asking the delegate for another ad to display in case of failure</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A <a href="../Classes/SmartAdServerAd.html">SmartAdServerAd</a> object to display, or nil if you don&rsquo;t want to display your own advertisement</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><strong>Deprecated</strong> Tells the delegate that the ad or the portrait creative or the landscape creative failed to download and asks for another ad to display</p><div class="bug"><p><strong>This method has been deprecated</strong>, please use
+sasViewDidFailToLoadAd: and/or sasViewDidFailToLoadAd:
+And call this method on the Smart AdServer View :
+[SmartAdServerView displayThisAd:]</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SmartAdServerViewDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/expandSASViewDidUnexpand:" title="expandSASViewDidUnexpand:"></a>
+	<h3 class="subsubtitle method-title">expandSASViewDidUnexpand:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p><strong>Deprecated</strong> Tells the delegate that the ad view did collapse</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)expandSASViewDidUnexpand:(SmartAdServerView *)<em>smartAdServerView</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>smartAdServerView</em></dt>
+			<dd><p>An ad view object telling the delegate that it collapsed</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><strong>Deprecated</strong> Tells the delegate that the ad view did collapse</p><div class="bug"><p><strong>This method has been deprecated</strong>, please use <a href="#//api/name/sasViewDidCollapse:">sasViewDidCollapse:</a></p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SmartAdServerViewDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/intersticielSASViewDidDisappear:" title="intersticielSASViewDidDisappear:"></a>
+	<h3 class="subsubtitle method-title">intersticielSASViewDidDisappear:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p><strong>Deprecated</strong> Tells the delegate that the ad disappeared</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)intersticielSASViewDidDisappear:(SmartAdServerView *)<em>smartAdServerView</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>smartAdServerView</em></dt>
+			<dd><p>An ad view object telling the delegate that it disappeared</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><strong>Deprecated</strong> Tells the delegate that the ad disappeared</p><div class="bug"><p><strong>This method has been deprecated</strong>, please use smartAdServerViewDisappeared:</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SmartAdServerViewDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sasView:didDownloadAdInfo:" title="sasView:didDownloadAdInfo:"></a>
+	<h3 class="subsubtitle method-title">sasView:didDownloadAdInfo:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that the ad data has been fetched, and will try to display it</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)sasView:(SmartAdServerView *)<em>adView</em> didDownloadAdInfo:(SmartAdServerAd *)<em>adInfo</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>adView</em></dt>
+			<dd><p>The ad view informing the delegate about the ad beeing fetched</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>adInfo</em></dt>
+			<dd><p>is a copy of the <a href="../Classes/SmartAdServerAd.html">SmartAdServerAd</a> object</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Tells the delegate that the ad data has been fetched, and will try to display it</p>
+
+<p>It lets you know what the ad data is, so you can adapt your ad behavior. See the <a href="../Classes/SmartAdServerAd.html">SmartAdServerAd</a> Class Reference for more information.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SmartAdServerViewDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sasView:shouldHandleUrl:" title="sasView:shouldHandleUrl:"></a>
+	<h3 class="subsubtitle method-title">sasView:shouldHandleUrl:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Asks the delegate whether to execute ad action</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (BOOL)sasView:(SmartAdServerView *)<em>adView</em> shouldHandleUrl:(NSURL *)<em>URL</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>URL</em></dt>
+			<dd><p>The url that will be called</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>whether the Smart AdServer SDK should handle the URL</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Asks the delegate whether to execute ad action</p>
+
+<p>Implement this method if you want to process some urls yourself.</p><div class="bug"><p>Returning NO means that the URL won&rsquo;t be processed by the SDK.</p></div><div class="warning"><p>Please note that a click will be counted, even if you return &ldquo;NO&rdquo; (you are supposed to handle the URL in this case).</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SmartAdServerViewDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sasViewDidCollapse:" title="sasViewDidCollapse:"></a>
+	<h3 class="subsubtitle method-title">sasViewDidCollapse:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that the <a href="../Classes/SmartAdServerView.html">SmartAdServerView</a> which displayed an expandable ad did collapse</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)sasViewDidCollapse:(SmartAdServerView *)<em>adView</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>adView</em></dt>
+			<dd><p>An ad view object informing the delegate that it did collapse</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Tells the delegate that the <a href="../Classes/SmartAdServerView.html">SmartAdServerView</a> which displayed an expandable ad did collapse</p>
+
+<p>This can happen :</p>
+
+<ul>
+<li>if the user tapped the toggle button to close the ad</li>
+<li>after the ad&rsquo;s duration</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SmartAdServerViewDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sasViewDidDisappear:" title="sasViewDidDisappear:"></a>
+	<h3 class="subsubtitle method-title">sasViewDidDisappear:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that the <a href="../Classes/SmartAdServerView.html">SmartAdServerView</a> has been dismissed</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)sasViewDidDisappear:(SmartAdServerView *)<em>adView</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>adView</em></dt>
+			<dd><p>The ad view informing the delegate that it was dismissed</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Tells the delegate that the SmartAdServerView has been dismissed</p>
+
+<p>This can happen :</p>
+
+<ul>
+<li>if the user taps the &ldquo;Skip&rdquo; button</li>
+<li>if the ad&rsquo;s duration elapsed</li>
+<li>if the ad has been clicked</li>
+<li>if the ad creative decided to close itself</li>
+<li>if your application decided to dismiss it by calling [SmartAdServerView dismiss]</li>
+</ul>
+<div class="warning"><p>You should not call the adView in this method, except if you want to release it (set your property and the ad&rsquo;s delegate to nil then)</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SmartAdServerViewDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sasViewDidFailToLoadAd:" title="sasViewDidFailToLoadAd:"></a>
+	<h3 class="subsubtitle method-title">sasViewDidFailToLoadAd:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that the <a href="../Classes/SmartAdServerView.html">SmartAdServerView</a> failed to download the ad</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)sasViewDidFailToLoadAd:(SmartAdServerView *)<em>adView</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>adView</em></dt>
+			<dd><p>An ad view object informing the delegate about the failure</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Tells the delegate that the SmartAdServerView failed to download the ad</p>
+
+<p>This can happen when the user&rsquo;s connection is interrupted before downloading the ad.
+In this case you might want to</p>
+
+<ul>
+<li>display a custom SmartAdServerAd : see [SmartAdServerView displayThisAd:]</li>
+<li>refresh the ad view : see [SmartAdServerView refresh]</li>
+<li><p>dismiss the ad view</p>
+
+<p>  [adView dismiss];</p></li>
+</ul>
+
+
+<p>if it&rsquo;s unlimited or remove it</p>
+
+<pre><code>[adView removeFromSuperView];
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SmartAdServerViewDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sasViewDidLoadAd:" title="sasViewDidLoadAd:"></a>
+	<h3 class="subsubtitle method-title">sasViewDidLoadAd:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that the creative from the current ad has been loaded and displayed</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)sasViewDidLoadAd:(SmartAdServerView *)<em>adView</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>adView</em></dt>
+			<dd><p>An ad view object informing the delegate about the creative beeing loaded</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Tells the delegate that the creative from the current ad has been loaded and displayed</p><div class="warning"><p>This method  is not only called the first time :)an ad creative is displayed, but also when the user turns the device, and in a browsable HTML creative, when a new page is loaded</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SmartAdServerViewDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sasViewDidPerformAdAction:willExitApplication:" title="sasViewDidPerformAdAction:willExitApplication:"></a>
+	<h3 class="subsubtitle method-title">sasViewDidPerformAdAction:willExitApplication:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that an ad action has been made (for example, the user tapped the ad)</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)sasViewDidPerformAdAction:(SmartAdServerView *)<em>adView</em> willExitApplication:(BOOL)<em>willExit</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>adView</em></dt>
+			<dd><p>An ad view object informing the delegate about the ad beeing clicked</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>willExit</em></dt>
+			<dd><p>whether the user chose to leave the app.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Tells the delegate that an ad action has been made (for example, the user tapped the ad)</p>
+
+<p>With this method you are informed of the user&rsquo;s action, and you can take appropriate decision (save state, launch your introduction video,&hellip;)</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SmartAdServerViewDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sasViewWillDismissModalView:" title="sasViewWillDismissModalView:"></a>
+	<h3 class="subsubtitle method-title">sasViewWillDismissModalView:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that the modal view will be dismissed</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)sasViewWillDismissModalView:(SmartAdServerView *)<em>adView</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>adView</em></dt>
+			<dd><p>An ad view object informing the delegate about the modal view going to open</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Tells the delegate that the modal view will be dismissed</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SmartAdServerViewDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sasViewWillPresentModalView:" title="sasViewWillPresentModalView:"></a>
+	<h3 class="subsubtitle method-title">sasViewWillPresentModalView:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that a modal view will appear to display the ad&rsquo;s redirect URL web page if appropriate</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)sasViewWillPresentModalView:(SmartAdServerView *)<em>adView</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>adView</em></dt>
+			<dd><p>An ad view object informing the delegate about the modal view going to open</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Tells the delegate that a modal view will appear to display the ad&rsquo;s redirect URL web page if appropriate</p>
+
+<p>This won&rsquo;t be called in case of URLs which should not be displayed in a browser like YouTube, iTunes,&hellip; in this case, it calls <a href="#//api/name/sasViewDidPerformAdAction:willExitApplication:">sasViewDidPerformAdAction:willExitApplication:</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SmartAdServerViewDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/viewControllerForSmartAdServerView:" title="viewControllerForSmartAdServerView:"></a>
+	<h3 class="subsubtitle method-title">viewControllerForSmartAdServerView:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Asks the delegate for a View Controller to manage the modal view that displays the redirect URL</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (UIViewController *)viewControllerForSmartAdServerView:(SmartAdServerView *)<em>smartAdServerView</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>smartAdServerView</em></dt>
+			<dd><p>An ad view object asking the delegate for a View Controller</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>: A View Controller able to manage the modal view</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Asks the delegate for a View Controller to manage the modal view that displays the redirect URL</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SmartAdServerViewDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 Smart AdServer SAS. All rights reserved. (Last updated: 2012-06-05)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

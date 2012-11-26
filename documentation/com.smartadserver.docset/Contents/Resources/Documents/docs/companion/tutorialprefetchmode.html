@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>tutorialprefetchmode-template Document</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="" />	
+		<meta name="generator" content="appledoc 2.0.4 (build 703)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Smart AdServer iOS SDK </a></h1>
+				<a id="developerHome" href="../index.html"></a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode" id="pageTitleHeader">tutorialprefetchmode-template Document</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar"></ul>
+		</header>
+		<article>
+			<a title="tutorialprefetchmode-template Document" name="top"></a>
+			<div id="overview_contents" role="main">
+				<div id="container">	
+					<h1>Prefetch Mode Tutorial for the Smart AdServer iOS SDK</h1>
+
+<h2 id="step1" >Introduction</h2>
+
+
+<p>This document is a quick guide to use the prefetch mode of the iOS SDK in your application.
+It assumes you have already read the getting started document where you install the SDK and learn how to use the SDK, meaning you know how to display an ad and to handle the delegate methods.
+If you haven&rsquo;t read it already, <a href="./gettingstarted.html">click here</a>.</p>
+
+<p>The prefetch mode was developed in order to respond to certain network-related dificulties :</p>
+
+<ul>
+<li>HD videos or heavy videos in general raise download time and user experience issues.</li>
+<li>When going offline, the application is not able to download ads anymore, depriving the advertiser from significant loss of ad impressions.</li>
+</ul>
+
+
+<p>For now, only interstitials can be prefetched, and <strong>only one ad</strong> in your app can be prefetched. This can be your startup interstitial or any interstitial in your app.
+When using the prefetch mode in both online and offline mode, an ad will be downloaded while the previous downloaded ad will be displayed, if available.</p>
+
+<p>There is a sample project called SampleOffline included with the iOS SDK package, we recommend that you have a look at it to see the prefetch behavior before integrating it into your app.</p>
+
+<h2 id="step1" >Using the prefetch mode</h2>
+
+
+<p>There are 2 classes that you will use :</p>
+
+<ul>
+<li>the <a href="../../Classes/SASInterstitialView.html">SASInterstitialView</a> class that inherits <a href="../../Classes/SmartAdServerView.html">SmartAdServerView</a> will be responsible for displaying the ad.</li>
+<li>the <a href="../../Classes/SmartAdServerAd.html">SmartAdServerAd</a> class that inherits from NSObject represents the ad object.</li>
+</ul>
+
+
+<p>And a protocol :</p>
+
+<ul>
+<li>the <a href="../../Protocols/SmartAdServerViewDelegate.html">SmartAdServerViewDelegate</a> protocol : The protocol methods allow the delegate to be aware of the ad-related events.
+You should use it to handle your app&rsquo;s or the ad&rsquo;s behavior like adapting your view size depending on the ad being displayed or not.
+The delegate of a <a href="../../Classes/SASInterstitialView.html">SASInterstitialView</a> object must adopt the <a href="../../Protocols/SmartAdServerViewDelegate.html">SmartAdServerViewDelegate</a> protocol.</li>
+</ul>
+
+
+<p>Assuming that you declared a myBannerProperty :</p>
+
+<pre><code>@property (nonatomic, retain) SASInterstitialView *myInterstitial;
+</code></pre>
+
+<p>You can use the following code in your .m to prefetch your ad interstitial :</p>
+
+<pre><code>if (!self.myInterstitial) {
+    SASInterstitialView *interstitial = [[SASInterstitialView alloc] initWithFrame:self.view.bounds loader:SmartAdServerViewLoaderNone];
+    // If you want to have a loader view on the interstitial, so that the user doesn't have the interstitial "popping" on the screen, you can use a different loader type, for example :
+    //SASInterstitialView *interstitial = [[SASInterstitialView alloc] initWithFrame:self.view.bounds];
+
+    self.myInterstitial = interstitial;
+    [interstitial release];
+}
+
+//Set your ad's delegate, which will be responsible for presenting the ad's modal view to the user, and will be notified of significative events
+self.myInterstitial.delegate = self;
+
+//Load the ad with your settings
+//The pageId can be a string in some rare cases, this is why you have to pass an NSString.
+//One ad per page of your application should have the "YES" for the "master" argument, and the other should have "NO", this is for page view counting.
+//The ad will be removed after the duration defined in the settings (default is 10 seconds) but you can set a custom timeout (in seconds) in this method.
+[self.myInterstitial prefetchFormatId:12345 pageId:@"98765" master:YES target:nil];
+
+//Display the ad to the user, here we assume that we are in a UIViewController
+[self.view addSubview:self.myInterstitial];
+</code></pre>
+
+<p>We recommend to keep a pointer in the object responsible for the ad display, and to release it in your dealloc method. It is also <b>very important</b> to <b>set the delegate to nil</b> when this delegate is destroyed (or earlier, if you don&rsquo;t want to be notified anymore) :</p>
+
+<p><b>Warning : Not setting the delegate to nil may result in the ad calling it after it has been destroyed and cause a crash.</b></p>
+
+<pre><code>- (void)dealloc {
+    //release you other objects
+    self.myInterstitial.delegate = nil;
+    self.myInterstitial = nil;
+    [super dealloc];
+}
+</code></pre>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 Smart AdServer SAS. All rights reserved. (Last updated: 2012-06-05)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
+						
+					
+					</div>
+				</div>
+			</div>
+		</article>
+	</body>
+</html>

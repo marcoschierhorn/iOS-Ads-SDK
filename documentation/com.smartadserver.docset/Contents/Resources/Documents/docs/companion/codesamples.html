@@ -1,0 +1,338 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>codesamples-template Document</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="" />	
+		<meta name="generator" content="appledoc 2.0.4 (build 703)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Smart AdServer iOS SDK </a></h1>
+				<a id="developerHome" href="../index.html"></a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode" id="pageTitleHeader">codesamples-template Document</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar"></ul>
+		</header>
+		<article>
+			<a title="codesamples-template Document" name="top"></a>
+			<div id="overview_contents" role="main">
+				<div id="container">	
+					<h1>Samples for the iOS SDK</h1>
+
+<p>This document includes code samples which assume that particular choices have been made. Those choices may not suit your requirements (you don't always want a loader, for example), so please make sure you understand the parameters you use, and test the ad display, with good, bad, and no connection, and no ad to deliver, before submitting your application to the App Store.
+</p>
+
+
+
+
+<h2 id="step2" >1. Basic implementations</h2>
+
+
+<p></p>
+
+<h3>Example 1 : Basic Banner or Toaster</h3>
+
+
+<p>This example is for a banner or a toaster on the iPhone.</p>
+
+<br/>You can specify any frame you want. By convention, banners have a ratio aspect of 6:1 in portrait mode, so if you have borders in your application, you should adapt the ad's height. The creative will be adapted to your view's frame, but it will look better if they have the same size.
+
+
+<br/>The iPad recommended height with a 6:1 ratio is 128 pixels
+
+
+<pre><code>SASBannerView *banner = [[SASBannerView alloc] initWithFrame:CGRectMake(.0, .0, 320.0, 53.0) loader:SmartAdServerViewLoaderNone];
+
+//If you want to have a loader view on the banner, instead of having nothing, you can use a different loader type, for example :
+//SASBannerView *banner = [[SASBannerView alloc] initWithFrame:CGRectMake(.0, .0, 320.0, 53.0) 
+                                                                loader:SmartAdServerViewLoaderActivityIndicatorStyleWhite];
+
+//For a toaster, you must specify in which direction the view is allowed to expand (in case a trafic manager programs an expand format on this placement)
+banner.expandsFromTop = YES;
+
+//Set your ad's delegate, which will be the presentator of the ad's modal view to the user, and will be notified of significative events
+//This must be the view controller actually controlling the view displaying the ad, not a UIViewController just designed to handle the ad logic
+banner.delegate = self;
+
+//Load the ad with your settings
+//The pageId can be a string in some case, this is why you have to pass an NSString
+//One ad per page of your application should have "YES" for the "master" argument, and the other ads should have "NO", this is for page view counting.
+[banner loadFormatId:12345 pageId:@"98765" master:YES target:nil];
+
+//Display the ad to the user, here we assume that we are in a UIViewController
+[self.view addSubview:banner];
+</code></pre>
+
+<p>We recommend to keep a pointer in the object responsible for the ad display, and to release it in your dealloc method. It is also <strong>very important</strong> to <strong>set the delegate to nil</strong> when this delegate is destroyed (or earlier, if you don&rsquo;t want to be notified anymore) :</p>
+
+<p>Assuming that you declared a myBanner property :</p>
+
+<pre><code>@property (nonatomic, retain) SASBannerView *myBanner;
+</code></pre>
+
+<p>add to the code above :</p>
+
+<pre><code>self.myBanner = banner;
+[banner release];
+</code></pre>
+
+<p>And in your dealloc method :</p>
+
+<pre><code>- (void)dealloc {
+    //release your other objects
+    self.myBanner.delegate = nil;
+    self.myBanner = nil;
+    [super dealloc];
+}
+</code></pre>
+
+<p><b>Warning : Not setting the delegate to nil may result in the ad calling it after it has been destroyed and cause a crash.</b></p>
+
+<p>You can also implement some delegate methods to customize the ad&rsquo;s and your app&rsquo;s behavior :</p>
+
+<pre><code>//Called when the ad data has been fetched
+- (void)sasView:(SmartAdServerView *)adView didDownloadAdInfo:(SmartAdServerAd *)adInfo {
+    //You can put your code here
+}
+
+//Called when your ad is ready to be displayed or is displayed if you already called [self.view addSubview:myBanner];
+- (void)sasViewDidLoadAd:(SmartAdServerView *)adView {
+    //You can put your code here
+}
+
+//Called when the SmartAdServerView instance failed to download the ad
+- (void)sasViewDidFailToLoadAd:(SmartAdServerView *)adView {
+    [adView dismiss];
+    //If you won't want to display it in your UIViewController life circle anymore you can also remove it
+    [adView removeFromSuperView];
+    //You can also handle your view layout here, like changing your tableView size to take back the space dedicated to the ad
+}
+</code></pre>
+
+<br/>
+
+
+<h3>Example 2 : Basic Interstitial</h3>
+
+
+<p>We assume that we are in a UIViewController, so we take its view bounds for the frame to cover it entirely.</p>
+
+<pre><code>SASInterstitialView *interstitial = [[SASInterstitialView alloc] initWithFrame:self.view.bounds loader:SmartAdServerViewLoaderNone];
+// If you want to have a loader view on the interstitial, so that the user doesn't have the interstitial "popping" on the screen, you can use a different loader type, for example :
+//SASInterstitialView *interstitial = [[SASInterstitialView alloc] initWithFrame:self.view.bounds loader:SmartAdServerViewLoaderActivityIndicatorStyleBlack];
+
+//Set your ad's delegate, which will be responsible for presenting the ad's modal view to the user, and will be notified of significative events
+interstitial.delegate = self;
+
+//Load the ad with your settings
+//The pageId can be a string in some case, this is why you have to pass an NSString
+//One ad per page of your application should have the "YES" for the "master" argument, and the other should have "NO", this is for page view counting.
+//The ad will be removed after the duration defined in the settings (default is 10 seconds) but you can set a custom timeout (in seconds) in this method.
+[interstitial loadFormatId:12345 pageId:@"98765" master:YES target:nil timeout:5];
+
+//Display the ad to the user, here we assume that we are in a UIViewController
+[self.view addSubview:interstitial];
+</code></pre>
+
+<p>We recommend to keep a pointer in the object responsible for the ad display, and to release it in your dealloc method. It is also <strong><strong>very important</strong></strong> to <strong><strong>set the delegate to nil</strong></strong> when this delegate is destroyed (or earlier, if you don&rsquo;t want to be notified anymore) :</p>
+
+<p>Assuming that you declared a myInterstitial property :</p>
+
+<pre><code>@property (nonatomic, retain) SASInterstitialView *myInterstitial;
+</code></pre>
+
+<p>add to the code above :</p>
+
+<pre><code>self.myInterstitial = interstitial;
+[interstitial release];
+</code></pre>
+
+<p>And in your dealloc method :</p>
+
+<pre><code>- (void)dealloc {
+    //release you other objects
+    self.myInterstitial.delegate = nil;
+    self.myInterstitial = nil;
+    [super dealloc];
+}
+</code></pre>
+
+<p><b>Warning : Not setting the delegate to nil may result in the ad calling it after it has been destroyed and cause a crash.</b></p>
+
+<br/>
+
+
+<h3>Example 3 : Startup Interstitial</h3>
+
+
+<p>You can use the same code as above, but you need to create the ad in your app delegate and to use the SmartAdServerViewLoaderLaunchImage to display your Default.png file.</p>
+
+<pre><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [SmartAdServerView setSiteID:123456];
+
+    SASInterstitialView *startupInterstitial = [[SASInterstitialView alloc] initWithFrame:rootViewController.view.bounds loader:SmartAdServerViewLoaderLaunchImage];
+    [startupInterstitial loadFormatId:12345 pageId:@"98765" master:YES target:nil];
+    startupInterstitial.delegate = rootViewController;
+
+    [rootViewController.view addSubview:startupInterstitial];
+    [startupInterstitial release];
+
+    return YES;
+}
+</code></pre>
+
+<h2 id="step2" >2. Other implementations</h2>
+
+
+
+
+<h3>Example 4 : Banner displayed only when downloaded</h3>
+
+
+<p>Assuming that you declared a myBanner property :</p>
+
+<pre><code>@property (nonatomic, retain) SASBannerView *myBanner;
+</code></pre>
+
+<p>You could implement your banner this way so that it will only be displayed when it&rsquo;s completely loaded :</p>
+
+<pre><code>- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    SASBannerView *banner = [[SASBannerView alloc] initWithFrame:CGRectMake(.0, .0, 320.0, 53.0) loader:SmartAdServerViewLoaderNone];
+    self.myBanner = banner;
+    [banner release];
+
+    self.myBanner.expandsFromTop = YES;
+    self.myBanner.delegate = self;
+
+    //The pageId can be a string in some case, this is why you have to pass an NSString
+    //One ad per page of your application should have "YES" for the "master" argument, and the other ads should have "NO", this is for page view counting.
+    [banner loadFormatId:12345 pageId:@"98765" master:YES target:nil];
+}
+
+//Called when the ad data has been fetched
+- (void)sasView:(SmartAdServerView *)adView didDownloadAdInfo:(SmartAdServerAd *)adInfo {
+    //You can put your code here
+}
+
+//Called when your ad is ready to be displayed or is displayed if you already called [self.view addSubview:myBanner];
+- (void)sasViewDidLoadAd:(SmartAdServerView *)adView {
+
+    if (adView == self.myBanner) {
+        [self.view addSubview:adView];
+        [adView release];
+    }
+
+    //Handle your view layout here, like changing your view or tableView y origin to make place for the ad
+}
+
+//Called when the SmartAdServerView instance failed to download the ad
+- (void)sasViewDidFailToLoadAd:(SmartAdServerView *)adView {
+    [adView dismiss];
+    //If you won't want to display it in your UIViewController life circle anymore you can also remove it
+    [adView removeFromSuperView];
+}
+</code></pre>
+
+<p>We recommend to keep a pointer in the object responsible for the ad display, and to release it in your dealloc method. It is also <strong><strong>very important</strong></strong> to <strong>set the delegate to nil</strong> when this delegate is destroyed (or earlier, if you don&rsquo;t want to be notified anymore) :</p>
+
+<p>And in your dealloc method :</p>
+
+<pre><code>- (void)dealloc {
+    //release your other objects
+    self.myBanner.delegate = nil;
+    self.myBanner = nil;
+    [super dealloc];
+}
+</code></pre>
+
+<p><b>Warning : Not setting the delegate to nil may result in the ad calling it after it has been destroyed and cause a crash.</b></p>
+
+<br/>
+
+
+<h3>Example 5 : Interstitial displayed when info received but before download of the ad</h3>
+
+
+<p>Assuming that you declared a myInterstitial property :</p>
+
+<pre><code>@property (nonatomic, retain) SASInterstitialView *myInterstitial;
+</code></pre>
+
+<p>You could implement your banner this way so that it will only be displayed when it&rsquo;s completely loaded :</p>
+
+<pre><code>- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    SASInterstitialView *interstitial = [[SASInterstitialView alloc] initWithFrame:self.view.bounds loader:SmartAdServerViewLoaderActivityIndicatorStyleBlack];
+    self.myInterstitial = interstitial;
+    [interstitial release];
+
+    self.myInterstitial.delegate = self;
+
+    //The pageId can be a string in some case, this is why you have to pass an NSString
+    //One ad per page of your application should have "YES" for the "master" argument, and the other ads should have "NO", this is for page view counting.
+    [self.myInterstitial loadFormatId:12345 pageId:@"98765" master:YES target:nil timeout:5];
+}
+
+//Called when the ad data has been fetched
+- (void)sasView:(SmartAdServerView *)adView didDownloadAdInfo:(SmartAdServerAd *)adInfo {
+
+    //The loader view will appear before downloading the ad
+    //In case of a video layer, a travel or bouncing video, it will display the download percentage
+    if (adView == self.myInterstitial) {
+        [self.view addSubview:adView];
+        [adView release];
+    }
+}
+
+//Called when your ad is ready to be displayed or is displayed if you already called [self.view addSubview:myBanner];
+- (void)sasViewDidLoadAd:(SmartAdServerView *)adView {
+
+}
+
+//Called when the SmartAdServerView instance failed to download the ad
+- (void)sasViewDidFailToLoadAd:(SmartAdServerView *)adView {
+    [adView dismiss];
+    //If you won't want to display it in your UIViewController life circle anymore you can also remove it
+    [adView removeFromSuperView];
+}
+</code></pre>
+
+<p>We recommend to keep a pointer in the object responsible for the ad display, and to release it in your dealloc method. It is also <b>very important</b> to <b>set the delegate to nil</b> when this delegate is destroyed (or earlier, if you don&rsquo;t want to be notified anymore) :</p>
+
+<p>And in your dealloc method :</p>
+
+<pre><code>- (void)dealloc {
+    //release your other objects
+    self.myInterstitial.delegate = nil;
+    self.myInterstitial = nil;
+    [super dealloc];
+}
+</code></pre>
+
+<p><b>Warning : Not setting the delegate to nil may result in the ad calling it after it has been destroyed and cause a crash.</b></p>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 Smart AdServer SAS. All rights reserved. (Last updated: 2012-06-05)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
+						
+					
+					</div>
+				</div>
+			</div>
+		</article>
+	</body>
+</html>

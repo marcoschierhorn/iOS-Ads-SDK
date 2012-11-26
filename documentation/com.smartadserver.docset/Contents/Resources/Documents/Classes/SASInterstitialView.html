@@ -1,0 +1,921 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>SASInterstitialView Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.4 (build 703)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Smart AdServer iOS SDK </a></h1>
+				<a id="developerHome" href="../index.html"></a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">SASInterstitialView Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/delegate">&nbsp;&nbsp;&nbsp;&nbsp;delegate</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/dismiss">&nbsp;&nbsp;&nbsp;&nbsp;- dismiss</option>
+	
+	<option value="//api/name/displayThisAd:">&nbsp;&nbsp;&nbsp;&nbsp;- displayThisAd:</option>
+	
+	<option value="//api/name/initWithFrame:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithFrame:</option>
+	
+	<option value="//api/name/initWithFrame:loader:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithFrame:loader:</option>
+	
+	<option value="//api/name/initWithFrame:loader:hideStatusBar:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithFrame:loader:hideStatusBar:</option>
+	
+	<option value="//api/name/loadFormatId:pageId:master:target:">&nbsp;&nbsp;&nbsp;&nbsp;- loadFormatId:pageId:master:target:</option>
+	
+	<option value="//api/name/loadFormatId:pageId:master:target:timeout:">&nbsp;&nbsp;&nbsp;&nbsp;- loadFormatId:pageId:master:target:timeout:</option>
+	
+	<option value="//api/name/prefetchFormatId:pageId:master:target:">&nbsp;&nbsp;&nbsp;&nbsp;- prefetchFormatId:pageId:master:target:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Ad interstitial view properties">Ad interstitial view properties</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating an ad insterstitial view">Creating an ad insterstitial view</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Loading an Interstitial">Loading an Interstitial</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Interacting with the ad interstitial view">Interacting with the ad interstitial view</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/delegate">delegate</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dismiss">dismiss</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/displayThisAd:">displayThisAd:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithFrame:">initWithFrame:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithFrame:loader:">initWithFrame:loader:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithFrame:loader:hideStatusBar:">initWithFrame:loader:hideStatusBar:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loadFormatId:pageId:master:target:">loadFormatId:pageId:master:target:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loadFormatId:pageId:master:target:timeout:">loadFormatId:pageId:master:target:timeout:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/prefetchFormatId:pageId:master:target:">prefetchFormatId:pageId:master:target:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="SASInterstitialView Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">SASInterstitialView Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value"><a href="../Classes/SmartAdServerView.html">SmartAdServerView</a> : UIView</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">SASInterstitialView.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The <a href="SASInterstitialView.html">SASInterstitialView</a> class provides a wrapper view that displays an ad interstitial to the user.</p>
+
+<p>When the user taps a <a href="SASInterstitialView.html">SASInterstitialView</a> instance, the view triggers an action programmed into the advertisement.
+For example, an advertisement might, present a modal advertisement, show a movie, or launch a third party application (Safari, the App Store, YouTube&hellip;).
+Your application is notified by the <strong><a href="../Protocols/SmartAdServerViewDelegate.html">SmartAdServerViewDelegate</a> protocol</strong> methods which are called during the ad&rsquo;s lifecycle.
+You can interact with the view by</p>
+
+<ul>
+<li>displaying a local <strong><a href="../Classes/SmartAdServerAd.html">SmartAdServerAd</a></strong> created by your application : <a href="#//api/name/displayThisAd:">displayThisAd:</a></li>
+<li>removing it : <a href="#//api/name/dismiss">dismiss</a></li>
+</ul>
+
+
+<p>The <a href="#//api/name/delegate">delegate</a> of a <a href="SASInterstitialView.html">SASInterstitialView</a> object must adopt the <a href="../Protocols/SmartAdServerViewDelegate.html">SmartAdServerViewDelegate</a> protocol.
+The protocol methods allow the <a href="#//api/name/delegate">delegate</a> to be aware of the ad-related events.
+You can use it to handle your app&rsquo;s or the ad&rsquo;s (the <a href="SASInterstitialView.html">SASInterstitialView</a> instance) behavior like adapting your viewController&rsquo;s view size depending on the ad being displayed or not.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Ad interstitial view properties" name="task_Ad interstitial view properties"></a>
+						<h3 class="subsubtitle task-title">Ad interstitial view properties</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+		<span class="tooltip"><p>  The object that acts as the <a href="#//api/name/delegate">delegate</a> of the receiving ad interstitial view.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Creating an ad insterstitial view" name="task_Creating an ad insterstitial view"></a>
+						<h3 class="subsubtitle task-title">Creating an ad insterstitial view</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithFrame:">&ndash;&nbsp;initWithFrame:</a></code>
+		<span class="tooltip"><p>Initializes and returns a <a href="SASInterstitialView.html">SASInterstitialView</a> object for the given frame.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithFrame:loader:">&ndash;&nbsp;initWithFrame:loader:</a></code>
+		<span class="tooltip"><p>Initializes and returns a <a href="SASInterstitialView.html">SASInterstitialView</a> object for the given frame, and optionally sets a loader on it.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithFrame:loader:hideStatusBar:">&ndash;&nbsp;initWithFrame:loader:hideStatusBar:</a></code>
+		<span class="tooltip"><p>Initializes and returns a <a href="SASInterstitialView.html">SASInterstitialView</a> object for the given frame, and optionally sets a loader on it and hides the status bar.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Loading an Interstitial" name="task_Loading an Interstitial"></a>
+						<h3 class="subsubtitle task-title">Loading an Interstitial</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loadFormatId:pageId:master:target:">&ndash;&nbsp;loadFormatId:pageId:master:target:</a></code>
+		<span class="tooltip"><p>Fetches an interstitial from Smart AdServer.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loadFormatId:pageId:master:target:timeout:">&ndash;&nbsp;loadFormatId:pageId:master:target:timeout:</a></code>
+		<span class="tooltip"><p>Fetches an interstitial from Smart AdServer with a specified timeout.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/prefetchFormatId:pageId:master:target:">&ndash;&nbsp;prefetchFormatId:pageId:master:target:</a></code>
+		<span class="tooltip"><p>Prefetches an interstitial from Smart AdServer cache in offline or online mode.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Interacting with the ad interstitial view" name="task_Interacting with the ad interstitial view"></a>
+						<h3 class="subsubtitle task-title">Interacting with the ad interstitial view</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/displayThisAd:">&ndash;&nbsp;displayThisAd:</a></code>
+		<span class="tooltip"><p>Gives an ad for the interstitial view to display.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dismiss">&ndash;&nbsp;dismiss</a></code>
+		<span class="tooltip"><p>Removes the ad interstitial view.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="subsubtitle method-title">delegate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>  The object that acts as the <a href="#//api/name/delegate">delegate</a> of the receiving ad interstitial view.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) UIViewController&lt;SmartAdServerViewDelegate&gt; *delegate</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>  The object that acts as the <a href="#//api/name/delegate">delegate</a> of the receiving ad interstitial view.</p>
+
+<p>The <a href="#//api/name/delegate">delegate</a> must adopt the <a href="../Protocols/SmartAdServerViewDelegate.html">SmartAdServerViewDelegate</a> protocol.
+This must be the view controller actually controlling the view displaying the ad, not a view controller just designed to handle the ad logic.</p><div class="bug"><p><strong>Important</strong> : the <a href="#//api/name/delegate">delegate</a> is not retained by the <a href="SASInterstitialView.html">SASInterstitialView</a> instance, so you need to set the ad&rsquo;s <a href="#//api/name/delegate">delegate</a> to nil before the <a href="#//api/name/delegate">delegate</a> is killed.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SASInterstitialView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/dismiss" title="dismiss"></a>
+	<h3 class="subsubtitle method-title">dismiss</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes the ad interstitial view.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)dismiss</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Removes the ad interstitial view.</p>
+
+<p>Call this method to remove the advertisement from its subview.
+The view&rsquo;s disparition will be animated according to the advertiser&rsquo;s settings.</p><div class="warning"><p>This method doesn&rsquo;t remove ads having their unlimited attribute set to YES.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SASInterstitialView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/displayThisAd:" title="displayThisAd:"></a>
+	<h3 class="subsubtitle method-title">displayThisAd:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gives an ad for the interstitial view to display.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)displayThisAd:(SmartAdServerAd *)<em>adInterstitial</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>adInterstitial</em></dt>
+			<dd><p>A <a href="../Classes/SmartAdServerAd.html">SmartAdServerAd</a> created by your application. This object is retained by the ad interstitial view.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Gives an ad for the interstitial view to display.</p>
+
+<p>Use this method if you want your application to provide a local <a href="../Classes/SmartAdServerAd.html">SmartAdServerAd</a> (usually in case of error).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SASInterstitialView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithFrame:" title="initWithFrame:"></a>
+	<h3 class="subsubtitle method-title">initWithFrame:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes and returns a <a href="SASInterstitialView.html">SASInterstitialView</a> object for the given frame.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (id)initWithFrame:(CGRect)<em>frame</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>frame</em></dt>
+			<dd><p>A rectangle specifying the initial location and size of the ad interstitial view in its superview&rsquo;s coordinates. The frame of the table view changes when it loads an expand format.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes and returns a <a href="SASInterstitialView.html">SASInterstitialView</a> object for the given frame.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SASInterstitialView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithFrame:loader:" title="initWithFrame:loader:"></a>
+	<h3 class="subsubtitle method-title">initWithFrame:loader:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes and returns a <a href="SASInterstitialView.html">SASInterstitialView</a> object for the given frame, and optionally sets a loader on it.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (id)initWithFrame:(CGRect)<em>frame</em> loader:(SmartAdServerViewLoader)<em>loaderType</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>frame</em></dt>
+			<dd><p>A rectangle specifying the initial location and size of the ad interstitial view in its superview&rsquo;s coordinates. The frame of the table view changes when it loads an expand format.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>loaderType</em></dt>
+			<dd><p>A SmartAdServerViewLoader value that determines whether the view should display a loader or not while downloading the ad.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes and returns a <a href="SASInterstitialView.html">SASInterstitialView</a> object for the given frame, and optionally sets a loader on it.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SASInterstitialView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithFrame:loader:hideStatusBar:" title="initWithFrame:loader:hideStatusBar:"></a>
+	<h3 class="subsubtitle method-title">initWithFrame:loader:hideStatusBar:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes and returns a <a href="SASInterstitialView.html">SASInterstitialView</a> object for the given frame, and optionally sets a loader on it and hides the status bar.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (id)initWithFrame:(CGRect)<em>frame</em> loader:(SmartAdServerViewLoader)<em>loaderType</em> hideStatusBar:(BOOL)<em>hideStatusBar</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>frame</em></dt>
+			<dd><p>A rectangle specifying the initial location and size of the ad interstitial in its superview&rsquo;s coordinates. The frame of the table view changes when it loads an expand format.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>loaderType</em></dt>
+			<dd><p>A SmartAdServerViewLoader value that determines whether the view should display a loader or not while downloading the ad.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>hideStatusBar</em></dt>
+			<dd><p>A boolean value indicating the <a href="SASInterstitialView.html">SASInterstitialView</a> object to auto hide the status bar if needed when the ad is displayed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes and returns a <a href="SASInterstitialView.html">SASInterstitialView</a> object for the given frame, and optionally sets a loader on it and hides the status bar.</p>
+
+<p>You can use this method to display an interstitial in full screen mode, even if you have a status bar. The ad interstitial view will remove the status bar, and replace it when the ad duration is over, or when the user dimisses the ad by taping on it, or on the skip button.</p><div class="warning"><p>Your application should support auto-resizing without the status bar. Some ads can have a transparent background, and if your application doesn&rsquo;t resize, the user will see a blank 20px frame on top of your app.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SASInterstitialView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loadFormatId:pageId:master:target:" title="loadFormatId:pageId:master:target:"></a>
+	<h3 class="subsubtitle method-title">loadFormatId:pageId:master:target:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Fetches an interstitial from Smart AdServer.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)loadFormatId:(NSInteger)<em>formatId</em> pageId:(NSString *)<em>pageId</em> master:(BOOL)<em>isMaster</em> target:(NSString *)<em>target</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>formatId</em></dt>
+			<dd><p>The format ID in the Smart AdServer manage interface.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>pageId</em></dt>
+			<dd><p>The page ID in the Smart AdServer manage interface.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>isMaster</em></dt>
+			<dd><p>The master flag. If this is YES, the a Page view will be counted. This should have the YES value for the first ad on the page, and NO for the others (if you have more than one ad on the same page).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>target</em></dt>
+			<dd><p>If you specified targets in the Smart AdServer manage interface, you can send it here to target your advertisement.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Fetches an interstitial from Smart AdServer.</p>
+
+<p>Call this method after initializing your <a href="SASInterstitialView.html">SASInterstitialView</a> object to load the appropriate <a href="../Classes/SmartAdServerAd.html">SmartAdServerAd</a> object from the server.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SASInterstitialView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loadFormatId:pageId:master:target:timeout:" title="loadFormatId:pageId:master:target:timeout:"></a>
+	<h3 class="subsubtitle method-title">loadFormatId:pageId:master:target:timeout:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Fetches an interstitial from Smart AdServer with a specified timeout.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)loadFormatId:(NSInteger)<em>formatId</em> pageId:(NSString *)<em>pageId</em> master:(BOOL)<em>isMaster</em> target:(NSString *)<em>target</em> timeout:(float)<em>timeout</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>formatId</em></dt>
+			<dd><p>The format ID in the Smart AdServer manage interface.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>pageId</em></dt>
+			<dd><p>The page ID in the Smart AdServer manage interface.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>isMaster</em></dt>
+			<dd><p>The master flag. If this is YES, the a Page view will be counted. This should have the YES value for the first ad on the page, and NO for the others (if you have more than one ad on the same page).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>target</em></dt>
+			<dd><p>If you specified targets in the Smart AdServer manage interface, you can send it here to target your advertisement.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>timeout</em></dt>
+			<dd><p>The time givent to the ad interstitial view to download the ad data. After this time, the ad download will fail,  call <a href="../Protocols/SmartAdServerViewDelegate.html#//api/name/sasViewDidFailToLoadAd:">[SmartAdServerViewDelegate sasViewDidFailToLoadAd:]</a>, and be dismissed if not unlimited. A negative value will disable the timeout.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Fetches an interstitial from Smart AdServer with a specified timeout.</p>
+
+<p>Call this method after initializing your <a href="SASInterstitialView.html">SASInterstitialView</a> object with an <a href="#//api/name/initWithFrame:">initWithFrame:</a> to load the appropriate <a href="../Classes/SmartAdServerAd.html">SmartAdServerAd</a> object from the server.
+If the timeout expires, the <a href="SASInterstitialView.html">SASInterstitialView</a> will fail to prefetch and notify the <a href="#//api/name/delegate">delegate</a>. If an ad is available in the cache, it will display it even in offline mode.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SASInterstitialView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/prefetchFormatId:pageId:master:target:" title="prefetchFormatId:pageId:master:target:"></a>
+	<h3 class="subsubtitle method-title">prefetchFormatId:pageId:master:target:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Prefetches an interstitial from Smart AdServer cache in offline or online mode.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)prefetchFormatId:(NSInteger)<em>formatId</em> pageId:(NSString *)<em>pageId</em> master:(BOOL)<em>isMaster</em> target:(NSString *)<em>target</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>formatId</em></dt>
+			<dd><p>The format ID in the Smart AdServer manage interface.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>pageId</em></dt>
+			<dd><p>The page ID in the Smart AdServer manage interface.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>isMaster</em></dt>
+			<dd><p>The master flag. If this is YES, the a Page view will be counted. This should have the YES value for the first ad on the page, and NO for the others (if you have more than one ad on the same page).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>target</em></dt>
+			<dd><p>If you specified targets in the Smart AdServer manage interface, you can send it here to target your advertisement.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Prefetches an interstitial from Smart AdServer cache in offline or online mode.</p>
+
+<p>Call this method after initializing your <a href="SASInterstitialView.html">SASInterstitialView</a> object with an <a href="#//api/name/initWithFrame:">initWithFrame:</a> to load the appropriate <a href="../Classes/SmartAdServerAd.html">SmartAdServerAd</a> object from the server and display the previously prefetched ad.
+The <a href="SASInterstitialView.html">SASInterstitialView</a> will fail, and notify the <a href="#//api/name/delegate">delegate</a> if the timeout expires.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SASInterstitialView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 Smart AdServer SAS. All rights reserved. (Last updated: 2012-06-05)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

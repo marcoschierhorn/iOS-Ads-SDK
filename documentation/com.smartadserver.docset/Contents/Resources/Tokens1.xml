@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/SASBannerView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/SASBannerView</TokenIdentifier>
+			<Abstract type="html">The SASBannerView class provides a wrapper view that displays an ad banner to the user.</Abstract>
+			<DeclaredIn>SASBannerView.h</DeclaredIn>
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SASBannerView/delegate</TokenIdentifier>
+			<Abstract type="html">The object that acts as the delegate of the receiving ad banner view.</Abstract>
+			<DeclaredIn>SASBannerView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) UIViewController&lt;SmartAdServerViewDelegate&gt; *delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SASBannerView/expandsFromTop</TokenIdentifier>
+			<Abstract type="html">Whether the ad banner should expand from the top to the bottom.</Abstract>
+			<DeclaredIn>SASBannerView.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) BOOL expandsFromTop</Declaration>
+			
+			
+			<Anchor>//api/name/expandsFromTop</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SASBannerView/initWithFrame:</TokenIdentifier>
+			<Abstract type="html">Initializes and returns a SASBannerView object for the given frame</Abstract>
+			<DeclaredIn>SASBannerView.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithFrame:(CGRect)frame</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>frame</Name>
+					<Abstract type="html">A rectangle specifying the initial location and size of the ad banner view in its superview&apos;s coordinates. The frame of the table view changes when it loads an expand format.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithFrame:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SASBannerView/initWithFrame:loader:</TokenIdentifier>
+			<Abstract type="html">Initializes and returns a SASBannerView object for the given frame, and optionally sets a loader on it.</Abstract>
+			<DeclaredIn>SASBannerView.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithFrame:(CGRect)frame loader:(SmartAdServerViewLoader)loaderType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>frame</Name>
+					<Abstract type="html">A rectangle specifying the initial location and size of the ad banner view in its superview&apos;s coordinates. The frame of the table view changes when it loads an expand format.</Abstract>
+				</Parameter><Parameter>
+					<Name>loaderType</Name>
+					<Abstract type="html">A SmartAdServerViewLoader value that determines whether the view should display a loader or not while downloading the ad.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithFrame:loader:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SASBannerView/loadFormatId:pageId:master:target:</TokenIdentifier>
+			<Abstract type="html">Fetches a banner from Smart AdServer.</Abstract>
+			<DeclaredIn>SASBannerView.h</DeclaredIn>			
+			
+			<Declaration>- (void)loadFormatId:(NSInteger)formatId pageId:(NSString *)pageId master:(BOOL)isMaster target:(NSString *)target</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>formatId</Name>
+					<Abstract type="html">The format ID in the Smart AdServer manage interface.</Abstract>
+				</Parameter><Parameter>
+					<Name>pageId</Name>
+					<Abstract type="html">The page ID in the Smart AdServer manage interface.</Abstract>
+				</Parameter><Parameter>
+					<Name>isMaster</Name>
+					<Abstract type="html">The master flag. If this is YES, the a Page view will be counted. This should have the YES value for the first ad on the page, and NO for the others (if you have more than one ad on the same page).</Abstract>
+				</Parameter><Parameter>
+					<Name>target</Name>
+					<Abstract type="html">If you specified targets in the Smart AdServer manage interface, you can send it here to target your advertisement.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/loadFormatId:pageId:master:target:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SASBannerView/loadFormatId:pageId:master:target:timeout:</TokenIdentifier>
+			<Abstract type="html">Fetches a banner from Smart AdServer with a specified timeout.</Abstract>
+			<DeclaredIn>SASBannerView.h</DeclaredIn>			
+			
+			<Declaration>- (void)loadFormatId:(NSInteger)formatId pageId:(NSString *)pageId master:(BOOL)isMaster target:(NSString *)target timeout:(float)timeout</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>formatId</Name>
+					<Abstract type="html">The format ID in the Smart AdServer manage interface.</Abstract>
+				</Parameter><Parameter>
+					<Name>pageId</Name>
+					<Abstract type="html">The page ID in the Smart AdServer manage interface.</Abstract>
+				</Parameter><Parameter>
+					<Name>isMaster</Name>
+					<Abstract type="html">The master flag. If this is YES, the a Page view will be counted. This should have the YES value for the first ad on the page, and NO for the others (if you have more than one ad on the same page).</Abstract>
+				</Parameter><Parameter>
+					<Name>target</Name>
+					<Abstract type="html">If you specified targets in the Smart AdServer manage interface, you can send it here to target your advertisement.</Abstract>
+				</Parameter><Parameter>
+					<Name>timeout</Name>
+					<Abstract type="html">The time givent to the ad banner view to download the ad data. After this time, the ad download will fail,  call [SmartAdServerViewDelegate sasViewDidFailToLoadAd:], and be dismissed if not unlimited. A negative value will disable the timeout.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/loadFormatId:pageId:master:target:timeout:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SASBannerView/refresh</TokenIdentifier>
+			<Abstract type="html">Updates the banner data.</Abstract>
+			<DeclaredIn>SASBannerView.h</DeclaredIn>			
+			
+			<Declaration>- (void)refresh</Declaration>
+			
+			
+			<Anchor>//api/name/refresh</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SASBannerView/displayThisAd:</TokenIdentifier>
+			<Abstract type="html">Gives an ad for the banner view to display.</Abstract>
+			<DeclaredIn>SASBannerView.h</DeclaredIn>			
+			
+			<Declaration>- (void)displayThisAd:(SmartAdServerAd *)adBanner</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>adBanner</Name>
+					<Abstract type="html">A SmartAdServerAd created by your application. This object is retained by the ad banner view.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/displayThisAd:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/SmartAdServerAd.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/SmartAdServerAd</TokenIdentifier>
+			<Abstract type="html">A SmartAdServerAd object represent the ad data, as it has been programmed in the Smart AdServer interface
+You can create one of those objects, if you need to display an offline ad :</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/duration</TokenIdentifier>
+			<Abstract type="html">The time during which your ad will stay in place</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property float duration</Declaration>
+			
+			
+			<Anchor>//api/name/duration</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/backgroundColor</TokenIdentifier>
+			<Abstract type="html">The ad&apos;s background color
+  </Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *backgroundColor</Declaration>
+			
+			
+			<Anchor>//api/name/backgroundColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/creativeURL</TokenIdentifier>
+			<Abstract type="html">The creative displayed in portrait mode</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSURL *creativeURL</Declaration>
+			
+			
+			<Anchor>//api/name/creativeURL</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/creativeLandscapeUrl</TokenIdentifier>
+			<Abstract type="html">The creative displayed in portrait mode</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSURL *creativeLandscapeUrl</Declaration>
+			
+			
+			<Anchor>//api/name/creativeLandscapeUrl</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/redirectURL</TokenIdentifier>
+			<Abstract type="html">The URL called when the ad is clicked, for the ad action</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSURL *redirectURL</Declaration>
+			
+			
+			<Anchor>//api/name/redirectURL</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/redirectLandscapeURL</TokenIdentifier>
+			<Abstract type="html">The URL called when the ad (landscape creative if exists) is clicked, for the ad action</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSURL *redirectLandscapeURL</Declaration>
+			
+			
+			<Anchor>//api/name/redirectLandscapeURL</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/countURL</TokenIdentifier>
+			<Abstract type="html">The URL called when the ad is clicked, for statistics</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSURL *countURL</Declaration>
+			
+			
+			<Anchor>//api/name/countURL</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/countLandscapeURL</TokenIdentifier>
+			<Abstract type="html">The URL called when the ad (landscape creative if exists) is clicked, for statistics</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSURL *countLandscapeURL</Declaration>
+			
+			
+			<Anchor>//api/name/countLandscapeURL</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/impPixel</TokenIdentifier>
+			<Abstract type="html">The impression pixel to count the number of impressions</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSURL *impPixel</Declaration>
+			
+			
+			<Anchor>//api/name/impPixel</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/impLandscapePixel</TokenIdentifier>
+			<Abstract type="html">The impression pixel in landscape mode, to count the number of impressions</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSURL *impLandscapePixel</Declaration>
+			
+			
+			<Anchor>//api/name/impLandscapePixel</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/agencyPortraitPixels</TokenIdentifier>
+			<Abstract type="html">The impression pixel to count the number of impressions</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSArray *agencyPortraitPixels</Declaration>
+			
+			
+			<Anchor>//api/name/agencyPortraitPixels</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/agencyLandscapePixels</TokenIdentifier>
+			<Abstract type="html">The impression pixel in landscape mode, to count the number of impressions</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSArray *agencyLandscapePixels</Declaration>
+			
+			
+			<Anchor>//api/name/agencyLandscapePixels</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/text</TokenIdentifier>
+			<Abstract type="html">The text displayed on the &quot;trigger&quot; button of an expand ad</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *text</Declaration>
+			
+			
+			<Anchor>//api/name/text</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/textColor</TokenIdentifier>
+			<Abstract type="html">The color of the text displayed on the &quot;trigger&quot; button of an expand ad</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *textColor</Declaration>
+			
+			
+			<Anchor>//api/name/textColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/expandedAtInit</TokenIdentifier>
+			<Abstract type="html">A boolean value which specifies whether it should be expanded when loaded</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property BOOL expandedAtInit</Declaration>
+			
+			
+			<Anchor>//api/name/expandedAtInit</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/expand</TokenIdentifier>
+			<Abstract type="html">A boolean value which specifies whether the ad is in expand format</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property BOOL expand</Declaration>
+			
+			
+			<Anchor>//api/name/expand</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/navigationHasControls</TokenIdentifier>
+			<Abstract type="html">A boolean value which specifies if the WebView displaying the ad&apos;s redirect URL has controls.</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property BOOL navigationHasControls</Declaration>
+			
+			
+			<Anchor>//api/name/navigationHasControls</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/fromTop</TokenIdentifier>
+			<Abstract type="html">A boolean value which specifies whether the ad should expand from top</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property BOOL fromTop</Declaration>
+			
+			
+			<Anchor>//api/name/fromTop</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/transparentBackground</TokenIdentifier>
+			<Abstract type="html">A boolean value which specifies whether the ad has a transparent background</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property BOOL transparentBackground</Declaration>
+			
+			
+			<Anchor>//api/name/transparentBackground</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/askConfirmationBeforeClosingApp</TokenIdentifier>
+			<Abstract type="html">A boolean value which specifies whether the ad asks the user if he wants to quit the app when a third party app is called</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property BOOL askConfirmationBeforeClosingApp</Declaration>
+			
+			
+			<Anchor>//api/name/askConfirmationBeforeClosingApp</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/videoAutoPlay</TokenIdentifier>
+			<Abstract type="html">A boolean value which specifies whether the video ad should auto-play</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property BOOL videoAutoPlay</Declaration>
+			
+			
+			<Anchor>//api/name/videoAutoPlay</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/skip</TokenIdentifier>
+			<Abstract type="html">A boolean value which specifies whether the ad has a skip button</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property BOOL skip</Declaration>
+			
+			
+			<Anchor>//api/name/skip</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/redirectsToThirdParty</TokenIdentifier>
+			<Abstract type="html">A boolean value which specifies whether the ad&apos;s will redirect to the App Store/YouTube/..</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property BOOL redirectsToThirdParty</Declaration>
+			
+			
+			<Anchor>//api/name/redirectsToThirdParty</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/skipPosition</TokenIdentifier>
+			<Abstract type="html">The button&apos;s Skip Position</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property SkipPosisiton skipPosition</Declaration>
+			
+			
+			<Anchor>//api/name/skipPosition</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/creativeType</TokenIdentifier>
+			<Abstract type="html">An integer specifying the ad&apos;s creative type (image, HTML)</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property CreativeType creativeType</Declaration>
+			
+			
+			<Anchor>//api/name/creativeType</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/creativeScript</TokenIdentifier>
+			<Abstract type="html">An HTML script to load in case of an HTML creative type</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *creativeScript</Declaration>
+			
+			
+			<Anchor>//api/name/creativeScript</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/creativeScriptURL</TokenIdentifier>
+			<Abstract type="html">The URL to the HTML script to load in case of an HTML creative type</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSURL *creativeScriptURL</Declaration>
+			
+			
+			<Anchor>//api/name/creativeScriptURL</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/isOffline</TokenIdentifier>
+			<Abstract type="html">An HTML script to load in case of an HTML creative type</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) BOOL isOffline</Declaration>
+			
+			
+			<Anchor>//api/name/isOffline</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/expandedHeight</TokenIdentifier>
+			<Abstract type="html">The desired expanded height, in protrait orientation, for a toaster</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property CGFloat expandedHeight</Declaration>
+			
+			
+			<Anchor>//api/name/expandedHeight</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/expandedLandscapeHeight</TokenIdentifier>
+			<Abstract type="html">The desired expanded height, in landscape orientation, for a toaster
+  </Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property CGFloat expandedLandscapeHeight</Declaration>
+			
+			
+			<Anchor>//api/name/expandedLandscapeHeight</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/addStandardTrigger</TokenIdentifier>
+			<Abstract type="html">whether the standard trigger should be added at the bottom</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property BOOL addStandardTrigger</Declaration>
+			
+			
+			<Anchor>//api/name/addStandardTrigger</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/triggerHeight</TokenIdentifier>
+			<Abstract type="html">The desired height of the trigger zone, for a toaster</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property CGFloat triggerHeight</Declaration>
+			
+			
+			<Anchor>//api/name/triggerHeight</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/triggerLandscapeHeight</TokenIdentifier>
+			<Abstract type="html">The desired height of the trigger zone, in landscape orientation, for a toaster</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property CGFloat triggerLandscapeHeight</Declaration>
+			
+			
+			<Anchor>//api/name/triggerLandscapeHeight</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/imageSize</TokenIdentifier>
+			<Abstract type="html">The original portrait image size</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property CGSize imageSize</Declaration>
+			
+			
+			<Anchor>//api/name/imageSize</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/landscapeImageSize</TokenIdentifier>
+			<Abstract type="html">The original landscape image size</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property CGSize landscapeImageSize</Declaration>
+			
+			
+			<Anchor>//api/name/landscapeImageSize</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/videoSize</TokenIdentifier>
+			<Abstract type="html">The original video size</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property CGSize videoSize</Declaration>
+			
+			
+			<Anchor>//api/name/videoSize</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/expirationDate</TokenIdentifier>
+			<Abstract type="html">The expiration date for offline ads</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSDate *expirationDate</Declaration>
+			
+			
+			<Anchor>//api/name/expirationDate</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SmartAdServerAd/insertionId</TokenIdentifier>
+			<Abstract type="html">The insertion ID</Abstract>
+			<DeclaredIn>SmartAdServerAd.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) NSInteger insertionId</Declaration>
+			
+			
+			<Anchor>//api/name/insertionId</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

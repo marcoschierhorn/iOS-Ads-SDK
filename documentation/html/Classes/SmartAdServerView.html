@@ -1,0 +1,932 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>SmartAdServerView Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.4 (build 703)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Smart AdServer iOS SDK </a></h1>
+				<a id="developerHome" href="../index.html"></a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">SmartAdServerView Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/enableIdentifierHashing">&nbsp;&nbsp;&nbsp;&nbsp;+ enableIdentifierHashing</option>
+	
+	<option value="//api/name/enableLogging">&nbsp;&nbsp;&nbsp;&nbsp;+ enableLogging</option>
+	
+	<option value="//api/name/enableTestMode">&nbsp;&nbsp;&nbsp;&nbsp;+ enableTestMode</option>
+	
+	<option value="//api/name/setBaseUrl:">&nbsp;&nbsp;&nbsp;&nbsp;+ setBaseUrl:</option>
+	
+	<option value="//api/name/setCoordinate:">&nbsp;&nbsp;&nbsp;&nbsp;+ setCoordinate:</option>
+	
+	<option value="//api/name/setSiteID:">&nbsp;&nbsp;&nbsp;&nbsp;+ setSiteID:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/dismissVideoLayer">&nbsp;&nbsp;&nbsp;&nbsp;- dismissVideoLayer</option>
+	
+	<option value="//api/name/initWithFrame:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithFrame:</option>
+	
+	<option value="//api/name/initWithFrame:loader:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithFrame:loader:</option>
+	
+	<option value="//api/name/initWithFrame:loader:hideStatusBar:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithFrame:loader:hideStatusBar:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Global Settings">Global Settings</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating ad views">Creating ad views</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Loading ad data">Loading ad data</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enableIdentifierHashing">enableIdentifierHashing</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enableLogging">enableLogging</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enableTestMode">enableTestMode</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setBaseUrl:">setBaseUrl:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setCoordinate:">setCoordinate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setSiteID:">setSiteID:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dismissVideoLayer">dismissVideoLayer</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithFrame:">initWithFrame:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithFrame:loader:">initWithFrame:loader:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithFrame:loader:hideStatusBar:">initWithFrame:loader:hideStatusBar:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="SmartAdServerView Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">SmartAdServerView Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">UIView</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">SASAdDownloaderDelegate<br />SASMoviePlayerManagerDelegate<br />UIWebViewDelegate</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">SmartAdServerView.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The <a href="SmartAdServerView.html">SmartAdServerView</a> class provides a wrapper view that displays advertisements to the user.</p>
+
+<p>When the user taps a <a href="SmartAdServerView.html">SmartAdServerView</a>, the view triggers an action programmed into the advertisement.
+For example, an advertisement might, present a modal advertisement, show a movie, or launch a third party application (Safari, the App Store, YouTube&hellip;).
+Your application is notified by the <strong><a href="../Protocols/SmartAdServerViewDelegate.html">SmartAdServerViewDelegate</a> protocol</strong> methods which are called during the ad&rsquo;s lifecycle.
+You can interact with the view by</p>
+
+<ul>
+<li>refreshing it : refresh</li>
+<li>displaying a local <strong><a href="../Classes/SmartAdServerAd.html">SmartAdServerAd</a></strong> created by your application : displayThisAd:</li>
+<li>removing it : dismiss</li>
+</ul>
+
+
+<p>The delegate of a <a href="SmartAdServerView.html">SmartAdServerView</a> object must adopt the <a href="../Protocols/SmartAdServerViewDelegate.html">SmartAdServerViewDelegate</a> protocol.
+The protocol methods allow the delegate to be aware of the ad-related events.
+You can use it to handle your app&rsquo;s or the ad&rsquo;s (the <a href="SmartAdServerView.html">SmartAdServerView</a> instance) behavior like adapting your viewController&rsquo;s view size depending on the ad being displayed or not.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Global Settings" name="task_Global Settings"></a>
+						<h3 class="subsubtitle task-title">Global Settings</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setSiteID:">+&nbsp;setSiteID:</a></code>
+		<span class="tooltip"><p>Sets your app&rsquo;s Site ID.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setBaseUrl:">+&nbsp;setBaseUrl:</a></code>
+		<span class="tooltip"><p>Set the base URL for the ad call</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setCoordinate:">+&nbsp;setCoordinate:</a></code>
+		<span class="tooltip"><p>Specify the user&rsquo;s coordinate</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enableTestMode">+&nbsp;enableTestMode</a></code>
+		<span class="tooltip"><p>Enable test mode</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enableLogging">+&nbsp;enableLogging</a></code>
+		<span class="tooltip"><p>Enable logging mode</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enableIdentifierHashing">+&nbsp;enableIdentifierHashing</a></code>
+		<span class="tooltip"><p>Enable the hashed mode for the UDID in the ad requests</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Creating ad views" name="task_Creating ad views"></a>
+						<h3 class="subsubtitle task-title">Creating ad views</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithFrame:">&ndash;&nbsp;initWithFrame:</a></code>
+		<span class="tooltip"><p>Initializes and returns a <a href="SmartAdServerView.html">SmartAdServerView</a> object for the given frame</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithFrame:loader:">&ndash;&nbsp;initWithFrame:loader:</a></code>
+		<span class="tooltip"><p>Initializes and returns a <a href="SmartAdServerView.html">SmartAdServerView</a> object for the given frame, and optionally sets a loader on it.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithFrame:loader:hideStatusBar:">&ndash;&nbsp;initWithFrame:loader:hideStatusBar:</a></code>
+		<span class="tooltip"><p>Initializes and returns a <a href="SmartAdServerView.html">SmartAdServerView</a> object for the given frame, and optionally sets a loader on it and hides the status bar.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Loading ad data" name="task_Loading ad data"></a>
+						<h3 class="subsubtitle task-title">Loading ad data</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dismissVideoLayer">&ndash;&nbsp;dismissVideoLayer</a></code>
+		<span class="tooltip"><p>Remove the video layer</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/enableIdentifierHashing" title="enableIdentifierHashing"></a>
+	<h3 class="subsubtitle method-title">enableIdentifierHashing</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Enable the hashed mode for the UDID in the ad requests</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (void)enableIdentifierHashing</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Enable the hashed mode for the UDID in the ad requests</p>
+
+<p>Calling this method will cause the UDID to be hashed by the SDK when requesting an advertisement.</p><div class="bug"><p>By hashing the UDID, Smart AdServer will not get the original value, so it can prevent from interfacing with other partners and applications.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SmartAdServerView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/enableLogging" title="enableLogging"></a>
+	<h3 class="subsubtitle method-title">enableLogging</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Enable logging mode</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (void)enableLogging</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Enable logging mode</p>
+
+<p>Calling this method will enable warning and error logs in your console.
+You may want to do this if you have problems in the integration, to see where the issue is.
+Letting this in production is not optimal, as logging consumes resources.</p>
+
+<pre><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+    [SmartAdServerView enableLogging];
+}
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SmartAdServerView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/enableTestMode" title="enableTestMode"></a>
+	<h3 class="subsubtitle method-title">enableTestMode</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Enable test mode</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (void)enableTestMode</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Enable test mode</p>
+
+<p>Calling this method will enable the test mode that displays a default ad that always deliver.
+This allow easier development, as the ad provided by</p>
+
+<ul>
+<li>(BOOL)application:(UIApplication <strong>)application didFinishLaunchingWithOptions:(NSDictionary </strong>)launchOptions {
+<a href="#//api/name/enableLogging">[SmartAdServerView enableLogging]</a>;
+}</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SmartAdServerView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setBaseUrl:" title="setBaseUrl:"></a>
+	<h3 class="subsubtitle method-title">setBaseUrl:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the base URL for the ad call</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (void)setBaseUrl:(NSString *)<em>theBaseUrl</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theBaseUrl</em></dt>
+			<dd><p>The base url of the website redirecting to the ad server (without the ending slash).</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Set the base URL for the ad call</p>
+
+<p>If you need the call to be done on a different domain than ours, use this method to specify it (if you use a CNAME for example).</p>
+
+<pre><code>[SmartAdServerView setBaseUrl:@"http://smartadserver.example.com"]http://smartadserver.example.com"];
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SmartAdServerView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setCoordinate:" title="setCoordinate:"></a>
+	<h3 class="subsubtitle method-title">setCoordinate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Specify the user&rsquo;s coordinate</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (void)setCoordinate:(CLLocationCoordinate2D)<em>coordinate</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>coordinate</em></dt>
+			<dd><p>The user&rsquo;s position</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Specify the user&rsquo;s coordinate</p>
+
+<p>Use this method if you want to provide geo-targeted advertisement.
+For example in your CLLoationManagerDelegate :</p>
+
+<pre><code>-(void)locationManager:(CLLocationManager *)m didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)old
+{
+    [SmartAdServerView setCoordinate:newLocation.coordinate];
+}
+</code></pre>
+
+<p>If used, this method should be called as often as possible in order to provide up to date geo-targeting.</p><div class="warning"><p><strong>Important:</strong> your application can be rejected by Apple if you use user&rsquo;s location <strong>only</strong> for advertising.
+Your application needs to have a feature (other than advertising) using geo-location in order to be allowed to ask for user&rsquo;s position.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SmartAdServerView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setSiteID:" title="setSiteID:"></a>
+	<h3 class="subsubtitle method-title">setSiteID:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets your app&rsquo;s Site ID.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (void)setSiteID:(NSInteger)<em>siteId</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>siteId</em></dt>
+			<dd><p>Your Site ID in the Smart AdServer manage interface</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets your app&rsquo;s Site ID.</p>
+
+<p>This method should be called before initializing any <a href="SmartAdServerView.html">SmartAdServerView</a> object.
+It&rsquo;s only necessary to call it once in your App&rsquo;s life cycle.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SmartAdServerView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/dismissVideoLayer" title="dismissVideoLayer"></a>
+	<h3 class="subsubtitle method-title">dismissVideoLayer</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Remove the video layer</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)dismissVideoLayer</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Remove the video layer</p>
+
+<p>Call this method to remove the video layer from its subview</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SmartAdServerView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithFrame:" title="initWithFrame:"></a>
+	<h3 class="subsubtitle method-title">initWithFrame:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes and returns a <a href="SmartAdServerView.html">SmartAdServerView</a> object for the given frame</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (id)initWithFrame:(CGRect)<em>frame</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fr</em></dt>
+			<dd><p>A rectangle specifying the initial location and size of the ad view in its superview&rsquo;s coordinates. The frame of the table view changes when it loads an expand format.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes and returns a <a href="SmartAdServerView.html">SmartAdServerView</a> object for the given frame</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SmartAdServerView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithFrame:loader:" title="initWithFrame:loader:"></a>
+	<h3 class="subsubtitle method-title">initWithFrame:loader:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes and returns a <a href="SmartAdServerView.html">SmartAdServerView</a> object for the given frame, and optionally sets a loader on it.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (id)initWithFrame:(CGRect)<em>frame</em> loader:(SmartAdServerViewLoader)<em>loaderType</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>loaderType</em></dt>
+			<dd><p>A SmartAdServerViewLoader value that determines whether the view should display a loader or not while downloading the ad.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fr</em></dt>
+			<dd><p>A rectangle specifying the initial location and size of the ad view in its superview&rsquo;s coordinates. The frame of the table view changes when it loads an expand format.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes and returns a <a href="SmartAdServerView.html">SmartAdServerView</a> object for the given frame, and optionally sets a loader on it.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SmartAdServerView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithFrame:loader:hideStatusBar:" title="initWithFrame:loader:hideStatusBar:"></a>
+	<h3 class="subsubtitle method-title">initWithFrame:loader:hideStatusBar:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes and returns a <a href="SmartAdServerView.html">SmartAdServerView</a> object for the given frame, and optionally sets a loader on it and hides the status bar.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (id)initWithFrame:(CGRect)<em>frame</em> loader:(SmartAdServerViewLoader)<em>loaderType</em> hideStatusBar:(BOOL)<em>hideStatusBar</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>loaderType</em></dt>
+			<dd><p>A SmartAdServerViewLoader value that determines whether the view should display a loader or not while downloading the ad.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>hideStatusBar</em></dt>
+			<dd><p>A boolean value indicating the <a href="SmartAdServerView.html">SmartAdServerView</a> object to auto hide the status bar if needed when the ad is displayed</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fr</em></dt>
+			<dd><p>A rectangle specifying the initial location and size of the ad view in its superview&rsquo;s coordinates. The frame of the table view changes when it loads an expand format.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes and returns a <a href="SmartAdServerView.html">SmartAdServerView</a> object for the given frame, and optionally sets a loader on it and hides the status bar.</p>
+
+<p>You can use this method to display interstitials in full screen mode, even if you have a status bar. The ad view will remove the status bar, and replace it when the ad duration is over, or when the user dimisses the ad by taping on it, or on the skip button.</p><div class="warning"><p>Your application should support auto-resizing without the status bar. Some ads can have a transparent background, and if your application doesn&rsquo;t resize, the user will see a blank 20px frame on top of your app.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SmartAdServerView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 Smart AdServer SAS. All rights reserved. (Last updated: 2012-06-05)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/SmartAdServerView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/SmartAdServerView</TokenIdentifier>
+			<Abstract type="html">The SmartAdServerView class provides a wrapper view that displays advertisements to the user.</Abstract>
+			<DeclaredIn>SmartAdServerView.h</DeclaredIn>
+			
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/SmartAdServerView/setSiteID:</TokenIdentifier>
+			<Abstract type="html">Sets your app&apos;s Site ID.</Abstract>
+			<DeclaredIn>SmartAdServerView.h</DeclaredIn>			
+			
+			<Declaration>+ (void)setSiteID:(NSInteger)siteId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>siteId</Name>
+					<Abstract type="html">Your Site ID in the Smart AdServer manage interface</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setSiteID:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/SmartAdServerView/setBaseUrl:</TokenIdentifier>
+			<Abstract type="html">Set the base URL for the ad call</Abstract>
+			<DeclaredIn>SmartAdServerView.h</DeclaredIn>			
+			
+			<Declaration>+ (void)setBaseUrl:(NSString *)theBaseUrl</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theBaseUrl</Name>
+					<Abstract type="html">The base url of the website redirecting to the ad server (without the ending slash).</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setBaseUrl:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/SmartAdServerView/setCoordinate:</TokenIdentifier>
+			<Abstract type="html">Specify the user&apos;s coordinate</Abstract>
+			<DeclaredIn>SmartAdServerView.h</DeclaredIn>			
+			
+			<Declaration>+ (void)setCoordinate:(CLLocationCoordinate2D)coordinate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>coordinate</Name>
+					<Abstract type="html">The user&apos;s position</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCoordinate:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/SmartAdServerView/enableTestMode</TokenIdentifier>
+			<Abstract type="html">Enable test mode</Abstract>
+			<DeclaredIn>SmartAdServerView.h</DeclaredIn>			
+			
+			<Declaration>+ (void)enableTestMode</Declaration>
+			
+			
+			<Anchor>//api/name/enableTestMode</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/SmartAdServerView/enableLogging</TokenIdentifier>
+			<Abstract type="html">Enable logging mode</Abstract>
+			<DeclaredIn>SmartAdServerView.h</DeclaredIn>			
+			
+			<Declaration>+ (void)enableLogging</Declaration>
+			
+			
+			<Anchor>//api/name/enableLogging</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/SmartAdServerView/enableIdentifierHashing</TokenIdentifier>
+			<Abstract type="html">Enable the hashed mode for the UDID in the ad requests</Abstract>
+			<DeclaredIn>SmartAdServerView.h</DeclaredIn>			
+			
+			<Declaration>+ (void)enableIdentifierHashing</Declaration>
+			
+			
+			<Anchor>//api/name/enableIdentifierHashing</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SmartAdServerView/initWithFrame:</TokenIdentifier>
+			<Abstract type="html">Initializes and returns a SmartAdServerView object for the given frame</Abstract>
+			<DeclaredIn>SmartAdServerView.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithFrame:(CGRect)frame</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>fr</Name>
+					<Abstract type="html">A rectangle specifying the initial location and size of the ad view in its superview&apos;s coordinates. The frame of the table view changes when it loads an expand format.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithFrame:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SmartAdServerView/initWithFrame:loader:</TokenIdentifier>
+			<Abstract type="html">Initializes and returns a SmartAdServerView object for the given frame, and optionally sets a loader on it.</Abstract>
+			<DeclaredIn>SmartAdServerView.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithFrame:(CGRect)frame loader:(SmartAdServerViewLoader)loaderType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>loaderType</Name>
+					<Abstract type="html">A SmartAdServerViewLoader value that determines whether the view should display a loader or not while downloading the ad.</Abstract>
+				</Parameter><Parameter>
+					<Name>fr</Name>
+					<Abstract type="html">A rectangle specifying the initial location and size of the ad view in its superview&apos;s coordinates. The frame of the table view changes when it loads an expand format.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithFrame:loader:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SmartAdServerView/initWithFrame:loader:hideStatusBar:</TokenIdentifier>
+			<Abstract type="html">Initializes and returns a SmartAdServerView object for the given frame, and optionally sets a loader on it and hides the status bar.</Abstract>
+			<DeclaredIn>SmartAdServerView.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithFrame:(CGRect)frame loader:(SmartAdServerViewLoader)loaderType hideStatusBar:(BOOL)hideStatusBar</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>loaderType</Name>
+					<Abstract type="html">A SmartAdServerViewLoader value that determines whether the view should display a loader or not while downloading the ad.</Abstract>
+				</Parameter><Parameter>
+					<Name>hideStatusBar</Name>
+					<Abstract type="html">A boolean value indicating the SmartAdServerView object to auto hide the status bar if needed when the ad is displayed</Abstract>
+				</Parameter><Parameter>
+					<Name>fr</Name>
+					<Abstract type="html">A rectangle specifying the initial location and size of the ad view in its superview&apos;s coordinates. The frame of the table view changes when it loads an expand format.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithFrame:loader:hideStatusBar:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SmartAdServerView/dismissVideoLayer</TokenIdentifier>
+			<Abstract type="html">Remove the video layer</Abstract>
+			<DeclaredIn>SmartAdServerView.h</DeclaredIn>			
+			
+			<Declaration>- (void)dismissVideoLayer</Declaration>
+			
+			
+			<Anchor>//api/name/dismissVideoLayer</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

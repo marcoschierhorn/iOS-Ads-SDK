@@ -1,0 +1,484 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>htmlcreatives-template Document</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="" />	
+		<meta name="generator" content="appledoc 2.0.4 (build 703)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Smart AdServer iOS SDK </a></h1>
+				<a id="developerHome" href="../index.html"></a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode" id="pageTitleHeader">htmlcreatives-template Document</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar"></ul>
+		</header>
+		<article>
+			<a title="htmlcreatives-template Document" name="top"></a>
+			<div id="overview_contents" role="main">
+				<div id="container">	
+					<h1>HTML Creatives Design</h1>
+
+<h2>1. Receiving information from the SDK</h2>
+
+<p>In order to get information from the SDK, you need to implement javascript callback functions in your HTML page. The SDK tests the existence of those functions, launches the appropriate service (location, acceleration,&hellip;) and calls those functions when appropriate.</p>
+
+<h3 id="orientation"> a. Getting the window orientation </h3>
+
+
+<p><strong>window.onorientationchange</strong> and <strong>window.orientation</strong>information</p>
+
+<p>window.onorientationchange is called when the device is rotated, as well as when your page loads.
+You can get the value of the orientation by getting the window.orientation value :</p>
+
+<ul>
+<li>0 => Portrait mode</li>
+<li>90 => Landscape counter clockwise</li>
+<li>-90 => Landscape clockwise</li>
+<li>180 => Portrait upside down</li>
+</ul>
+
+
+<p>This example will display the device current orientation to the user, and will update it after a rotation.</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta name="viewport" content="initial-scale=1.0, user-scalable=no" /&gt;
+        &lt;script type="text/javascript"&gt;
+        window.onorientationchange = function() {
+            var orientation = "unknown";
+            switch (window.orientation) {
+                case 0:
+                  orientation = "portrait";
+                  break;
+                case 90:
+                  orientation = "landscape counter clockwise";
+                  break;
+                case -90:
+                  orientation = "landscape clockwise";
+                  break;
+                case 180:
+                  orientation = "upside down";
+                  break;
+            }
+            document.getElementById('orientation').innerHTML = orientation;
+        };
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h4&gt;Your device is in "&lt;span id="orientation"&gt;&lt;/span&gt;" orientation&lt;/h4&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3 id="location"> b. Getting the device GPS coordinate </h3>
+
+
+<p><strong>sas_GPSUpdate(lat, lng);</strong></p>
+
+<p>If you implement this function, it will be called periodically with the user&rsquo;s latitude and longitude.</p>
+
+<p><strong>Warning</strong> : this function will only be called if the application accesses the user&rsquo;s coordinate, and transfers them to the SDK</p>
+
+<p>This example will display a fullscreen Google Map with a marker which follows the user&rsquo;s position.</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta name="viewport" content="initial-scale=1.0, user-scalable=no" /&gt;
+        &lt;style type="text/css"&gt;
+            html { height: 100% }
+            body { height: 100%; margin: 0px; padding: 0px; }
+            #map_canvas { height: 100%; }
+        &lt;/style&gt;
+        &lt;script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"&gt;&lt;/script&gt;
+        &lt;script type="text/javascript"&gt;
+            var map;
+            var marker;
+
+            function initialize() {
+                var latlng = new google.maps.LatLng(48.87128,2.3043);
+                var myOptions = {
+                    zoom: 16,
+                    center: latlng,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+                marker = new google.maps.Marker({
+                    position: latlng, 
+                    map: map,
+                    title:"Let's talk!"
+                });
+            }
+
+            function sas_GPSUpdate(lat, lng) {
+                var newLatLng = new google.maps.LatLng(lat,lng);
+                marker.setPosition(newLatLng);
+                map.setCenter(newLatLng);
+            }
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body onload="initialize()"&gt;
+        &lt;div id="map_canvas" style="width:100%; height:100%"&gt;&lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>b. Being warned when the device is shaked</h3>
+
+<p><strong>sas_deviceShaked();</strong></p>
+
+<p>If you implement this function, it will be called whenever the device is shaked by the user.
+This helps you make interactive ads, with a predefined behavior when the user shakes the device.</p>
+
+<p>This simple example will ask the user to shake the device, and it will open a popup.</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta name="viewport" content="initial-scale=1.0, user-scalable=no" /&gt;
+        &lt;style type="text/css"&gt;
+            h1 { text-align:center; }
+        &lt;/style&gt;
+        &lt;script type="text/javascript"&gt;
+        function sas_deviceShaked() {
+            alert("Let's talk!");
+        }
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Shake your Phone&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>c. Responding to acceleration events</h3>
+
+<p><strong>sas_accelerationUpdate(x, y, z);</strong></p>
+
+<p>If you implement this function, it will be called whenever the device accelerometer receives updates.
+This allows you to create ads with objects moving with the device orientation/acceleration.</p>
+
+<p>The 3 axes are defined with the following criterion :</p>
+
+<p><img src="iphone-axes.jpg" /></p>
+
+<p><strong>Warning</strong> in order to have the device axes matching the html document axes, you need to know the orientation of the device. See <a href="#orientation">Getting the window orientation</a> for more information.</p>
+
+<p>This example will display a div moving with the device motion (the axes don&rsquo;t match the window orientation).</p>
+
+<pre><code>&lt;!DOCTYPE html&gt; 
+&lt;html&gt; 
+&lt;head&gt; 
+    &lt;meta name="viewport" content="width=device-width,user-scalable=no" /&gt; 
+    &lt;style&gt; 
+    #logo {
+        width: 120px;
+        height: 20px;
+        border-radius: 5px;
+        -webkit-radius: 5px;
+        background-color: #ffdb00;
+        position:absolute;
+        top: 0px;
+        left: 0px;
+        text-align:center;
+    }
+    &lt;/style&gt; 
+&lt;/head&gt; 
+&lt;body&gt; 
+    &lt;div id="content"&gt; 
+        &lt;h1&gt;Smart AdServer&lt;/h1&gt;
+        &lt;div id="logo"&gt;Let's talk!&lt;/div&gt;
+    &lt;/div&gt; 
+    &lt;script&gt; 
+    var x = 0;
+    var y = 0;
+    var vx = 0;
+    var vy = 0;
+    var ax = 0;
+    var ay = 0;
+
+    var delay = 10;
+    var vMultiplier = 0.01;
+
+    function sas_accelerationUpdate(x, y, z) {
+        // Here you should check the window's orientation to assign the axes properly
+        ax = x;
+        ay = y;
+    }
+    setInterval(function() {
+        vy = vy + -(ay);
+        vx = vx + ax;
+
+        var logo = document.getElementById("logo");
+        y = parseInt(y + vy * vMultiplier);
+        x = parseInt(x + vx * vMultiplier);
+
+        if (x&lt;0) { x = 0; vx = 0; }
+        if (y&lt;0) { y = 0; vy = 0; }
+        if (x&gt;document.documentElement.clientWidth-120) { x = document.documentElement.clientWidth-120; vx = 0; }
+        if (y&gt;document.documentElement.clientHeight-20) { y = document.documentElement.clientHeight-20; vy = 0; }
+
+        logo.style.top = y + "px";
+        logo.style.left = x + "px";
+    }, delay);
+
+    &lt;/script&gt; 
+&lt;/body&gt; 
+&lt;/html&gt;
+</code></pre>
+
+<h3>d. Responding to gyroscope events</h3>
+
+
+<p><strong>sas_rotationUpdate(x, y, z);</strong></p>
+
+<p>If you implement this function, it will be called whenever the device gyroscope receives update.
+This allows you to create ads with objects moving with the device rotation.</p>
+
+<p>The 3 axes are defined with the following criterion :</p>
+
+<p><img src="iphone-rotation.jpg" /></p>
+
+<p><strong>Warning</strong> in order to have the device axes matching the html document axes, you need to know the orientation of the device. See <a href="#orientation">Getting the window orientation</a> for more information.</p>
+
+<p>This examples displays a 3D CSS cube rotating with the device.</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta name="viewport" content="initial-scale=0.5, user-scalable=no" /&gt;
+    &lt;style type="text/css"&gt;
+    body {
+      -webkit-perspective: 800; 
+      -webkit-perspective-origin: 50% 100px;
+    }
+
+    #cube {
+        position: relative;
+        margin: 100px auto 0;
+        height: 200px;
+        width: 200px;
+        -webkit-transition: -webkit-transform 2s linear;
+        -webkit-transform-style: preserve-3d;
+    }
+
+    .face {
+        position: absolute;
+        height: 160px;
+        width: 160px;
+        padding: 20px;
+        background-color: rgba(255, 219, 0, 0.7);
+        font-size: 50px;
+        line-height: 1em;
+        color: #fff;
+        border: 1px solid #555;
+        text-align:center;
+        -webkit-border-radius: 3px;
+    }   
+
+    #cube .one  {
+        -webkit-transform: rotateX(90deg) translateZ(100px);
+    }
+
+    #cube .two {
+        -webkit-transform: translateZ(100px);
+    }
+
+    #cube .three {
+        -webkit-transform: rotateY(90deg) translateZ(100px);
+    }
+
+    #cube .four {
+        -webkit-transform: rotateY(180deg) translateZ(100px);
+    }
+
+    #cube .five {
+        -webkit-transform: rotateY(-90deg) translateZ(100px);
+    }
+
+    #cube .six {
+        -webkit-transform: rotateX(-90deg) rotate(180deg) translateZ(100px) ;
+    }   
+    &lt;/style&gt;
+    &lt;script type="text/javascript"&gt;
+    var xAngle = 0, yAngle = 0,  zAngle = 0;
+    function sas_rotationUpdate(x,y,z) {
+        xAngle += parseInt(x*10);
+        yAngle += parseInt(y*10);
+        zAngle += parseInt(z*10);
+        document.getElementById('cube').style.webkitTransform = "rotateX("+xAngle+"deg) rotateY("+yAngle+"deg)  rotateZ("+zAngle+"deg)";
+    };
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt; 
+    &lt;div id="cube"&gt; 
+        &lt;div class="face one"&gt; 
+            Let's talk!
+        &lt;/div&gt; 
+        &lt;div class="face two"&gt; 
+            We can help!
+        &lt;/div&gt; 
+        &lt;div class="face three"&gt; 
+            Let's talk!
+        &lt;/div&gt; 
+        &lt;div class="face four"&gt; 
+            We can help!
+        &lt;/div&gt; 
+        &lt;div class="face five"&gt; 
+            Let's talk!
+        &lt;/div&gt; 
+        &lt;div class="face six"&gt; 
+            We can help!
+        &lt;/div&gt; 
+    &lt;/div&gt;  
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2>2. Sending information to the SDK</h2>
+
+<p>When the creative requests to open a link (i.e. when the user taps on a link, or with document.location.href), the SDK first checks whether the link is a request for an action, if yes, it will execute the appropriate action instead of letting the page follow the link.
+This is how you can send information to the SDK.</p>
+
+<h3>a. Opening the post-click URL in a new layer</h3>
+
+<p>When an ad is programmed on the Smart AdServer interface, it usually has a <strong><strong>post-click URL</strong></strong>, which points to the website the advertiser wants the user to see.</p>
+
+<p>By default, the whole ad view is considered as a big button, which opens a new layer, which loads the post-click URL, when the user taps on it.
+If you want your ad to be manipulated by the user, you need to create a global variable called : <strong><strong>sasSupportsClick</strong></strong> and set its value to true.
+This will prevent the SDK to open the ad&rsquo;s post-click URL when the user taps on the ad.
+You can decide to open the ad post-click URL with <strong><strong>href=&ldquo;sas:click&rdquo;</strong></strong></p>
+
+<p>This example shows an ad which opens the post-click URL after 10 seconds (with javascript), or if the user taps on the link.</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta name="viewport" content="initial-scale=1.0, user-scalable=no" /&gt;
+        &lt;script type="text/javascript"&gt;
+        var sasSupportsClick = true;
+        setTimeout("openAd()",10000);
+        function openAd() {
+            document.location.href = "sas:click"
+        }
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;&lt;a href="sas:click"&gt;Click here&lt;/a&gt; or wait 10 seconds to see this advertisement&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>b. Closing the ad</h3>
+
+<p>Ads can have a &ldquo;skip&rdquo; button, which can be positionned at a corner of the ad&rsquo;s frame, and looks like this :</p>
+
+<p><img src="skip-button.png" /></p>
+
+<p>If you want to have a custom HTML skip button, you first need to tell the SDK that your ad&rsquo;s HTML can be manipulated : create a global variable called : <strong><strong>sasSupportsClick</strong></strong> and set its value to true.</p>
+
+<p>For the ad to close, you need to create a link with href=sas:close. When the html page tries to open a &ldquo;sas:close&rdquo;, the SDK will intercept the request, and close the ad, as if the user had pressed the skip button.
+You can also close the ad with javascript : <strong><strong>document.location.href = &ldquo;sas:close&rdquo;</strong></strong>.</p>
+
+<p>Warning as your ad will allow the user to interact with it, the SDK will not intercept the user&rsquo;s taps. So if your ad has a post-click URL, you need to let the SDK know when you want to open the click URL, with &ldquo;sas:click&rdquo; (see example above).</p>
+
+<p>This example shows an ad which has a click url button, a skip button, and which will be closed after 10 seconds.</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta name="viewport" content="initial-scale=1.0, user-scalable=no" /&gt;
+        &lt;script type="text/javascript"&gt;
+        var sasSupportsClick = true;
+        setTimeout("closeAd()",10000);
+        function closeAd() {
+            document.location.href = "sas:close"
+        }
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;
+            &lt;a href="sas:click"&gt;Click here to see the ad&lt;/a&gt; &lt;br /&gt;
+            &lt;a href="sas:close"&gt;Or here to close it&lt;/a&gt;
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>c. Pre-loading your ad</h3>
+
+<p>By default, an ad is displayed when the WebView displaying it has been loaded. For some heavy creatives like those including videos, or for those loading further resources with javascript, you may want to postpone the ad&rsquo;s display.</p>
+
+<p>In order to do this, you need to create a global variable called <strong><strong>sasSupportsReadyToDisplay</strong></strong> and set its value to <strong><strong>true</strong></strong>.
+When the ad is ready to be displayed, setting the <strong><strong>document.location.href</strong></strong> value to <strong><strong>sas:readyToDisplay</strong></strong> will make it appear.
+During the loading progress, you must inform the SDK of the loading progress by setting the <strong><strong>document.location.href</strong></strong> value to <strong><strong>sas:progress:xxx</strong></strong> where xxx is the percentage of loading (a value between 0 and 99).
+The SDK will fail after 5 seconds without progress information, after what it will consider the ad download to be failed. So the sas:progress is mandatory. Because it&rsquo;s value is displayed to the user, it has to be an accurate information.</p>
+
+<p>Check the next part for a complete example including a complete video integration, including error handling.</p>
+
+<h3>d. Fail to download the ad</h3>
+
+<p>If an error preventing the user from viewing the ad properly occurs, you can set the <strong><strong>document.location.href</strong></strong> value to <strong><strong>sas:error</strong></strong>.
+This will cause an &ldquo;ad download failure&rdquo; in the SDK. This will cause the view to be removed, and the application to receive an ad failure information, so it can adapt its behavior.
+An example of when you want to call this : if the user is in good reception conditions, the ad starts to load a video buffer, and suddently the connection becomes too slow, you probably don&rsquo;t want to block the application until the connection gets better.</p>
+
+<p>This example shows a basic implementation of a video player with autoload, progress feedback, error handling, and postponed display of the creative :</p>
+
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+&lt;script type="text/javascript" charset="utf-8"&gt;
+var sasSupportsReadyToDisplay = true;
+window.addEventListener('load', load, false);
+function load() {
+    video = document.getElementById('video');
+    video.addEventListener('canplaythrough', canplaythrough, false);
+    video.addEventListener('progress', progress, false);
+    video.addEventListener('abort', error, false);
+    video.addEventListener('emptied', error, false);
+    video.addEventListener('error', error, false);
+    video.play();
+    video.pause();
+}
+function progress(e) {
+    document.location.href = 'sas:progress:'+parseInt(100 * video.buffered.end(0) / video.duration);
+}
+function canplaythrough() {
+    document.location.href = 'sas:readyToDisplay';
+    video.play();
+}
+function error(e) {
+    video.pause();
+    document.location.href = 'sas:error';
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;video src="http://www.808.dk/pics/video/gizmo.mp4" id="video" webkit-playsinline&gt;&lt;/video&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 Smart AdServer SAS. All rights reserved. (Last updated: 2012-06-05)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
+						
+					
+					</div>
+				</div>
+			</div>
+		</article>
+	</body>
+</html>

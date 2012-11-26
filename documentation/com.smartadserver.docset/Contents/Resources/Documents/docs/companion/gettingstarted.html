@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>gettingstarted-template Document</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="" />	
+		<meta name="generator" content="appledoc 2.0.4 (build 703)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Smart AdServer iOS SDK </a></h1>
+				<a id="developerHome" href="../index.html"></a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode" id="pageTitleHeader">gettingstarted-template Document</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar"></ul>
+		</header>
+		<article>
+			<a title="gettingstarted-template Document" name="top"></a>
+			<div id="overview_contents" role="main">
+				<div id="container">	
+					<h1>Getting Started with the Smart AdServer iOS SDK</h1>
+
+<h2 id="step1" >Introduction</h2>
+
+
+<p>Welcome to the Smart AdServer iOS SDK v3.2.2.</p>
+
+<p>This document is a quick guide to install the iOS SDK in your application.</p>
+
+<p>There are 3 classes that you will use :</p>
+
+<ul>
+<li>the <a href="../../Classes/SASBannerView.html">SASBannerView</a> and <a href="../../Classes/SASInterstitialView.html">SASInterstitialView</a> classes (inheriting from the <a href="../../Classes/SmartAdServerView.html">SmartAdServerView</a> class (that itself inherits from UIView)) will be responsible for displaying the ad;</li>
+<li>the <a href="../../Classes/SmartAdServerAd.html">SmartAdServerAd</a> class (inheriting from NSObject) represents the ad object.</li>
+</ul>
+
+
+<p>And a protocol :</p>
+
+<ul>
+<li>the <a href="../../Protocols/SmartAdServerViewDelegate.html">SmartAdServerViewDelegate</a> protocol : The protocol methods allow the delegate to be aware of the ad-related events.
+You should use it to handle your app&rsquo;s or the ad&rsquo;s behavior like adapting your view size depending on the ad being displayed or not.
+The delegate of a <a href="../../Classes/SASBannerView.html">SASBannerView</a> or <a href="../../Classes/SASInterstitialView.html">SASInterstitialView</a> object must adopt the <a href="../../Protocols/SmartAdServerViewDelegate.html">SmartAdServerViewDelegate</a> protocol.</li>
+</ul>
+
+
+<h2 id="step1" >1. Installing the SDK in your project</h2>
+
+
+<p>The first thing you need to do is to import all the files in your project.</p>
+
+<h3>Step 1: Drag the following file and folders into your project:</h3>
+
+
+<ul>
+<li><strong>libSmartAdServer.a</strong> : the compiled framework with all the code</li>
+<li><strong>headers</strong> : the documented headers with interfaces and protocols.</li>
+<li><strong>sas.bundle</strong> : the images and the localized files for the library. You can modify those files to adapt the graphic elements of the SmartAdServer SDK, the texts displayed, and to add additional languages to your application (default provided languages : english and french)</li>
+</ul>
+
+
+<p>Make sure that &ldquo;Copy items into destination group&rsquo;s folder (if needed)&rdquo;, and that all your targets are checked.</p>
+
+<p><img src="copyfiles.png" /></p>
+
+<h3>Step 2: As our library needs some frameworks to work, your project should be linked against:</h3>
+
+
+<ul>
+<li>the <strong>CoreLocation</strong> framework</li>
+<li>the <strong>SystemConfiguration</strong> framework</li>
+<li>the <strong>QuartzCore</strong> framework</li>
+<li>the <strong>CoreMotion</strong> framework</li>
+<li>the <strong>MediaPlayer</strong> framework</li>
+</ul>
+
+
+<p>The <strong>CoreMotion</strong> framework should be <strong>weak linked</strong> if you want to support <strong>iOS versions prior to 4.0</strong> :</p>
+
+<p><strong> For Xcode 4 </strong> :</p>
+
+<p>In the project navigator view, click on your project, select your target in the editor, click on the &ldquo;Build Phases&rdquo; tab. Add the libraries with the &ldquo;+&rdquo; button in the &ldquo;Link Binary With Libraries&rdquo;. For the CoreMotion framework, change the &ldquo;Required&rdquo; property to &ldquo;Optional&rdquo;</p>
+
+<p><img src="link_frameworks_xcode4.png" /></p>
+
+<p><strong> For Xcode 3 : </strong></p>
+
+<p>Right click on the &ldquo;Frameworks&rdquo; group in your project, choose &ldquo;Add&rdquo; => &ldquo;Existing Frameworks&hellip;&rdquo;, and add the three frameworks mentionned above.</p>
+
+<p>Select your target, click on <strong>Info</strong>, in  <strong>Linked Library</strong> changed <strong>Required</strong> to <strong>Weak</strong> for the <strong>CoreMotion framework</strong>.</p>
+
+<p><img src="addframeworks.png" /></p>
+
+<p>Our library includes the localization files in a bundle. In order to allow Cocoa to load those files, edit your Project-Info.plist file to add a row, set the key to <strong>CFBundleAllowMixedLocalizations</strong> and the value to <strong>YES</strong>.</p>
+
+<p><img src="bundle_allows_mixed_localizations.png" /></p>
+
+<p><strong>Forgeting this step will disable the internationalization of the SDK.</strong></p>
+
+<h2 id="step2" >2. Displaying an ad in your application</h2>
+
+
+<p>Import SASBannerView.h if you want to display a banner or a toaster and/or SASInterstitialView.h if you want to display an interstitial in the class file that will be responsible for displaying the ad :</p>
+
+<pre><code>#import "SASBannerView.h"
+#import "SASInterstitialView.h"
+</code></pre>
+
+<p>And the delegate of a SASBannerView or SASInterstitialView object must adopt the SmartAdServerViewDelegate protocol :</p>
+
+<pre><code>@interface MyViewController : UIViewController &lt;SmartAdServerViewDelegate&gt;
+</code></pre>
+
+<p>Both SASBannerView and SASInterstitialView classes inherit from the SmartAdServerView class, so to set your Application&rsquo;s site ID, use <a href="../../Classes/SmartAdServerView.html#//api/name/setSiteID:">[SmartAdServerView setSiteID:]</a>
+This step only needs to be done once in your application&rsquo;s life cycle, but it&rsquo;s required, so that Smart AdServer can collect ad display data. Typically you can call setSiteID: in your application:didFinishLaunchingWithOptions: method :</p>
+
+<pre><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+    [SmartAdServerView setSiteID:123456];
+    // Your app initialization code
+    return YES;
+}
+</code></pre>
+
+<p>At this point, for development purpose, you can also call two other static method :</p>
+
+<ul>
+<li><a href="../../Classes/SmartAdServerView.html#//api/name/enableLogging">[SmartAdServerView enableLogging]</a> will allow you to get feedback for debugging in case of an error, or to know which URL is called, etc. This should be removed in production (logs cost some CPU cycles).</li>
+<li><a href="../../Classes/SmartAdServerView.html#//api/name/enableTestMode">[SmartAdServerView enableTestMode]</a> can be used if you don&rsquo;t have proper ads configured on the server side. This will display a generic ad, and you&rsquo;ll be able to work on the integration without having to wait for a proper server-side ad configuration. This MUST be removed in production, because if not, only the generic ad will be displayed.</li>
+</ul>
+
+
+<p>Now you can start to create some ad placements with the help of the <a href="./codesamples.html">Samples page</a>.</p>
+
+<p><strong>Warning</strong> : In the SmartAdServerViewDelegate methods, the adView object is a SmartAdServerView instance. As SASBannerView and SASInterstitialView inherit from SmartAdServerView, you can check if adView is a banner or an interstitial by checking the following :</p>
+
+<pre><code>if ([adView isKindOfClass:@"SASBannerView"]) {
+    //adView is a banner
+    //Do banner stuff
+}
+else if ([adView isKindOfClass:@"SASInterstitialView"]) {
+    //adView is a interstitial
+    //Do interstitial stuff
+}
+</code></pre>
+
+<p>Before submitting to Apple, you should make sure that you did everything right and didn&rsquo;t forget something by checking the <a href="./checklist.html">Checklist page</a>.</p>
+
+<h2 id="step3" >3. Going further</h2>
+
+
+<p>Obviously, they are many other things you can do, and they are covered in the SASBannerView and SASInterstitialView Class References.
+Here are some examples (see the links for more information) :</p>
+
+<ul>
+<li>Geo-targeting your ads : <a href="../../Classes/SmartAdServerView.html#//api/name/setCoordinate:">[SmartAdServerView setCoordinate:]</a>;</li>
+<li>Refreshing a banner ad : <a href="../../Classes/SASBannerView.html#//api/name/refresh">[SASBannerView refresh]</a>;</li>
+<li>Displaying custom local ads (in case of download failure) : <a href="../../Classes/SASBannerView.html#//api/name/displayThisAd:">[SASBannerView displayThisAd:]</a>; or <a href="../../Classes/SASInterstitialView.html#//api/name/displayThisAd:">[SASInterstitialView displayThisAd:]</a>;</li>
+<li>Removing a interstitial view : <a href="../../Classes/SASInterstitialView.html#//api/name/dismiss">[SASInterstitialView dismiss]</a>;</li>
+</ul>
+
+
+<br/>
+
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 Smart AdServer SAS. All rights reserved. (Last updated: 2012-06-05)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
+						
+					
+					</div>
+				</div>
+			</div>
+		</article>
+	</body>
+</html>

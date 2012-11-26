@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/SASInterstitialView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/SASInterstitialView</TokenIdentifier>
+			<Abstract type="html">The SASInterstitialView class provides a wrapper view that displays an ad interstitial to the user.</Abstract>
+			<DeclaredIn>SASInterstitialView.h</DeclaredIn>
+			
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SASInterstitialView/delegate</TokenIdentifier>
+			<Abstract type="html">  The object that acts as the delegate of the receiving ad interstitial view.</Abstract>
+			<DeclaredIn>SASInterstitialView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) UIViewController&lt;SmartAdServerViewDelegate&gt; *delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SASInterstitialView/initWithFrame:</TokenIdentifier>
+			<Abstract type="html">Initializes and returns a SASInterstitialView object for the given frame.</Abstract>
+			<DeclaredIn>SASInterstitialView.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithFrame:(CGRect)frame</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>frame</Name>
+					<Abstract type="html">A rectangle specifying the initial location and size of the ad interstitial view in its superview&apos;s coordinates. The frame of the table view changes when it loads an expand format.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithFrame:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SASInterstitialView/initWithFrame:loader:</TokenIdentifier>
+			<Abstract type="html">Initializes and returns a SASInterstitialView object for the given frame, and optionally sets a loader on it.</Abstract>
+			<DeclaredIn>SASInterstitialView.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithFrame:(CGRect)frame loader:(SmartAdServerViewLoader)loaderType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>frame</Name>
+					<Abstract type="html">A rectangle specifying the initial location and size of the ad interstitial view in its superview&apos;s coordinates. The frame of the table view changes when it loads an expand format.</Abstract>
+				</Parameter><Parameter>
+					<Name>loaderType</Name>
+					<Abstract type="html">A SmartAdServerViewLoader value that determines whether the view should display a loader or not while downloading the ad.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithFrame:loader:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SASInterstitialView/initWithFrame:loader:hideStatusBar:</TokenIdentifier>
+			<Abstract type="html">Initializes and returns a SASInterstitialView object for the given frame, and optionally sets a loader on it and hides the status bar.</Abstract>
+			<DeclaredIn>SASInterstitialView.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithFrame:(CGRect)frame loader:(SmartAdServerViewLoader)loaderType hideStatusBar:(BOOL)hideStatusBar</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>frame</Name>
+					<Abstract type="html">A rectangle specifying the initial location and size of the ad interstitial in its superview&apos;s coordinates. The frame of the table view changes when it loads an expand format.</Abstract>
+				</Parameter><Parameter>
+					<Name>loaderType</Name>
+					<Abstract type="html">A SmartAdServerViewLoader value that determines whether the view should display a loader or not while downloading the ad.</Abstract>
+				</Parameter><Parameter>
+					<Name>hideStatusBar</Name>
+					<Abstract type="html">A boolean value indicating the SASInterstitialView object to auto hide the status bar if needed when the ad is displayed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithFrame:loader:hideStatusBar:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SASInterstitialView/loadFormatId:pageId:master:target:</TokenIdentifier>
+			<Abstract type="html">Fetches an interstitial from Smart AdServer.</Abstract>
+			<DeclaredIn>SASInterstitialView.h</DeclaredIn>			
+			
+			<Declaration>- (void)loadFormatId:(NSInteger)formatId pageId:(NSString *)pageId master:(BOOL)isMaster target:(NSString *)target</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>formatId</Name>
+					<Abstract type="html">The format ID in the Smart AdServer manage interface.</Abstract>
+				</Parameter><Parameter>
+					<Name>pageId</Name>
+					<Abstract type="html">The page ID in the Smart AdServer manage interface.</Abstract>
+				</Parameter><Parameter>
+					<Name>isMaster</Name>
+					<Abstract type="html">The master flag. If this is YES, the a Page view will be counted. This should have the YES value for the first ad on the page, and NO for the others (if you have more than one ad on the same page).</Abstract>
+				</Parameter><Parameter>
+					<Name>target</Name>
+					<Abstract type="html">If you specified targets in the Smart AdServer manage interface, you can send it here to target your advertisement.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/loadFormatId:pageId:master:target:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SASInterstitialView/loadFormatId:pageId:master:target:timeout:</TokenIdentifier>
+			<Abstract type="html">Fetches an interstitial from Smart AdServer with a specified timeout.</Abstract>
+			<DeclaredIn>SASInterstitialView.h</DeclaredIn>			
+			
+			<Declaration>- (void)loadFormatId:(NSInteger)formatId pageId:(NSString *)pageId master:(BOOL)isMaster target:(NSString *)target timeout:(float)timeout</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>formatId</Name>
+					<Abstract type="html">The format ID in the Smart AdServer manage interface.</Abstract>
+				</Parameter><Parameter>
+					<Name>pageId</Name>
+					<Abstract type="html">The page ID in the Smart AdServer manage interface.</Abstract>
+				</Parameter><Parameter>
+					<Name>isMaster</Name>
+					<Abstract type="html">The master flag. If this is YES, the a Page view will be counted. This should have the YES value for the first ad on the page, and NO for the others (if you have more than one ad on the same page).</Abstract>
+				</Parameter><Parameter>
+					<Name>target</Name>
+					<Abstract type="html">If you specified targets in the Smart AdServer manage interface, you can send it here to target your advertisement.</Abstract>
+				</Parameter><Parameter>
+					<Name>timeout</Name>
+					<Abstract type="html">The time givent to the ad interstitial view to download the ad data. After this time, the ad download will fail,  call [SmartAdServerViewDelegate sasViewDidFailToLoadAd:], and be dismissed if not unlimited. A negative value will disable the timeout.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/loadFormatId:pageId:master:target:timeout:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SASInterstitialView/prefetchFormatId:pageId:master:target:</TokenIdentifier>
+			<Abstract type="html">Prefetches an interstitial from Smart AdServer cache in offline or online mode.</Abstract>
+			<DeclaredIn>SASInterstitialView.h</DeclaredIn>			
+			
+			<Declaration>- (void)prefetchFormatId:(NSInteger)formatId pageId:(NSString *)pageId master:(BOOL)isMaster target:(NSString *)target</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>formatId</Name>
+					<Abstract type="html">The format ID in the Smart AdServer manage interface.</Abstract>
+				</Parameter><Parameter>
+					<Name>pageId</Name>
+					<Abstract type="html">The page ID in the Smart AdServer manage interface.</Abstract>
+				</Parameter><Parameter>
+					<Name>isMaster</Name>
+					<Abstract type="html">The master flag. If this is YES, the a Page view will be counted. This should have the YES value for the first ad on the page, and NO for the others (if you have more than one ad on the same page).</Abstract>
+				</Parameter><Parameter>
+					<Name>target</Name>
+					<Abstract type="html">If you specified targets in the Smart AdServer manage interface, you can send it here to target your advertisement.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/prefetchFormatId:pageId:master:target:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SASInterstitialView/displayThisAd:</TokenIdentifier>
+			<Abstract type="html">Gives an ad for the interstitial view to display.</Abstract>
+			<DeclaredIn>SASInterstitialView.h</DeclaredIn>			
+			
+			<Declaration>- (void)displayThisAd:(SmartAdServerAd *)adInterstitial</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>adInterstitial</Name>
+					<Abstract type="html">A SmartAdServerAd created by your application. This object is retained by the ad interstitial view.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/displayThisAd:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SASInterstitialView/dismiss</TokenIdentifier>
+			<Abstract type="html">Removes the ad interstitial view.</Abstract>
+			<DeclaredIn>SASInterstitialView.h</DeclaredIn>			
+			
+			<Declaration>- (void)dismiss</Declaration>
+			
+			
+			<Anchor>//api/name/dismiss</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>
